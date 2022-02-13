@@ -11723,10 +11723,12 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/S_a_i_d_i"
-local Name = '*𓄼• [ᴡᴇʟᴄᴏᴍᴇ ʏᴀ-> '..RinkBot..'](tg://user?id='..user_info.id..' )*\n*𓄼• [ᴅᴇᴠ ᴊᴀʙᴀᴡ](t.me/J_A_B_W_A)*\n*𓄼• [ᴅᴇᴠ ᴊᴀᴠᴀ](t.me/JAI6H)*\n*𓄼•  [ᴅᴇᴠ ᴊᴇᴋᴀ](t.me/Dev_Jeka)*\n*𓄼• [ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ](t.me/S_a_i_d_i)*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ->* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
+{text = '𓄼• ᴍʏ ᴅᴇᴠ •𓄹', url = "https://t.me/MY_DEV"},{text = '𓄼• ᴄʜᴀɴɴᴇʟ •𓄹', url = "https://t.me/S_a_i_d_i"},
+},
 {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
