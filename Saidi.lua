@@ -13062,9 +13062,6 @@ data = {
 {text = '〘 المبرمج جيكا 〙',type = 'text'},{text = '〘 المبرمج جابوا 〙',type = 'text'},
 },
 {
-{text = '〘 المساعد 〙',text'},{text = '〘 المطور 〙',type = 'text'},
-},
-{
 {text = '〘 تفعيل التواصل 〙',type = 'text'},{text = '〘 تعطيل التواصل 〙', type = 'text'},
 },
 {
