@@ -11710,7 +11710,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'رواية عمر حاحا', data = msg.sender.user_id..'/Haiw7'}, {text = 'رواية اشرف بطيخه', data = msg.sender.user_id..'/Haiw4'}, 
+{text = 'رواية عمر حاحا', data = msg.sender.user_id..'/Hahiw7'}, {text = 'رواية اشرف بطيخه', data = msg.sender.user_id..'/Haidw4'}, 
 },
 {
 {text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
@@ -13131,7 +13131,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'* ✧ اهلا بك عزيزي ال�
 end
 end
 
-if text == 'السيرفر' then
+if text == '〘 السيرفر 〙' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
 end
@@ -13155,7 +13155,7 @@ end
  ]]):read('*all')
 LuaTele.sendText(msg_chat_id,msg_id,ioserver,"md",true)
 end
-if text == 'المساعد' or text == 'مساعد' then   
+if text == '〘 المساعد 〙' or text == '〘 مساعد 〙' then   
 local id = Redis:get(Saidi.."id:HELPBEVQ:Groups")
 urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
 local banyt = JSON.decode(urrl)
@@ -13170,7 +13170,7 @@ klajq = '*'..banyt.result.first_name..'*'
 else
 klajq = 'لا يوجد'
 end
-local abnj = "*  ❲ HELP BOT ❳\n— — — — — — — — —\n "
+local abnj = " \n*𓄼• ɴᴀᴍᴇ -› * "..banyt.result.first_name.." \n"
 keybanyt = {} 
 keybanyt.inline_keyboard = {
 {
@@ -13179,7 +13179,7 @@ keybanyt.inline_keyboard = {
 }
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..msg_id.."&photo=t.me/"..banyt.result.username.."&caption="..URL.escape(abnj).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keybanyt))
-local TestT = "*  ❲ HELP BOT ❳\n— — — — — — — — —\n  𖥔*HELP NAME* :  "..banyt.result.first_name.." \n"
+local abnj = " \n*𓄼• ɴᴀᴍᴇ -› * "..banyt.result.first_name.." \n"
 keyboardd = {} 
 keybanyt.inline_keyboard = {
 {
@@ -13189,7 +13189,7 @@ keybanyt.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 end
-if text == 'المطور' or text == 'مطور البوت'  or text == '〘 المطور 〙' then   
+if text == 'المطور' or text == '〘 مطور البوت 〙'  or text == '〘 المطور 〙' then   
 local  ban = LuaTele.getUser(Sudo_Id) 
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -13222,7 +13222,7 @@ Creat = " Developers Bot \n"
 end
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
-local TestText = "  ❲ Developers Bot ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n𖥔 *Dev Bio* : ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -13232,13 +13232,13 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "  ❲ Developers Saidi  ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
 end
  
-if text == 'المطور جابوا' or text == 'جابوا' or text == 'مبرمج السورس' then  
+if text == '〘 المطور جابوا 〙' or text == '〘 جابوا 〙' or text == '〘 مبرمج السورس 〙' then  
 local UserId_Info = LuaTele.searchPublicChat("J_A_B_W_A")
 if UserId_Info.id then
 local  Jabwa = LuaTele.getUser(UserId_Info.id)
@@ -13272,7 +13272,7 @@ local msg_id = msg.id/2097152/0.5
 end
 end
 end
-if text == 'المبرمج جيكا' or text == 'جيكا' or text == 'عوز بوت' then  
+if text == '〘 المبرمج جيكا 〙' or text == '〘 جيكا 〙' or text == '〘 عوز بوت 〙' then  
 local UserId_Info = LuaTele.searchPublicChat("Dev_Jeka")
 if UserId_Info.id then
 local  Jabwa = LuaTele.getUser(UserId_Info.id)
@@ -14801,6 +14801,16 @@ local texting = {"اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِ�
 "«آلَلَهّمً ردٍنِآ إلَيَکْ ردٍآ جّمًيَلَآ💔🥺",
 }
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '𓄼• اذكار اخرا •𓄹', data = IdUser..'/Haiw5'}, },}}
+LuaTele.editMessageText(ChatId,Msg_id,texting[math.random(#texting)], 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)/Hahiw7') then
+local UserId = Text:match('(%d+)/Hahiw7')
+if tonumber(IdUser) == tonumber(UserId) then
+local texting = {"عمر حاحا ريمكس", 
+"وحد ربك الكود لسه م كمل",
+} 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'عمر حاحا اخرا -', data = IdUser..'/Haiw7'}, },}}
 LuaTele.editMessageText(ChatId,Msg_id,texting[math.random(#texting)], 'md', true, false, reply_markup)
 end
 end
