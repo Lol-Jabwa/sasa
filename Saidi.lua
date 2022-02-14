@@ -11700,6 +11700,25 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/NNAON/474&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
+if text == 'رويات' then
+if ChannelJoin(msg) == false then
+local chinfo = data_ns:get(ban_ns.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'رواية عمر حاحا', data = msg.sender.user_id..'/Haiw7'}, {text = 'رواية اشرف بطيخه', data = msg.sender.user_id..'/Haiw4'}, 
+},
+{
+{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'*⋆ مرحبا بك في قائمه روايات ⋆*',"md",false, false, false, false, reply_markup)
+end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
