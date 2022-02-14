@@ -1,7 +1,4 @@
---[[
 
-
---]]
 URL     = require("./libs/url")
 JSON    = require("./libs/dkjson")
 serpent = require("libs/serpent")
@@ -184,7 +181,7 @@ Addictive = Redis:sismember(Saidi.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Saidi.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if tonumber(UserId) == 1965534755 then
-Status = 'المبرمج جابوا' 
+Status = 'المطور جابوا' 
 elseif tonumber(UserId) == 5055146093 then
 Status = 'المبرمج جيكا'
 elseif UserId == Sudo_Id then  
@@ -976,7 +973,7 @@ elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
 if tonumber(msg.sender.user_id) == 1965534755 then
-msg.Name_Controller = 'المبرمج جابوا '
+msg.Name_Controller = 'المطور جابوا '
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 5055146093 then
 msg.Name_Controller = 'المبرمج جيكا'
@@ -6645,7 +6642,7 @@ keyJabwayt.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 end
-if text == 'المبرمج جابوا' or text == 'جابوا' or text == 'مبرمج السورس' then  
+if text == 'المطور جابوا' or text == 'جابوا' or text == 'مبرمج السورس' then  
 local UserId_Info = LuaTele.searchPublicChat("J_A_B_W_A")
 if UserId_Info.id then
 local  Jabwa = LuaTele.getUser(UserId_Info.id)
@@ -6739,9 +6736,9 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n ✧ مرحباً عزيزي المطور \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ -› معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n ✧ هناك شخص يريدك يا سيدي المطور \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ -› معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
-if text == 'المبرمج جابوا' or text == 'جابوا' or text == 'مبرمج السورس' then  
+if text == 'المطور جابوا' or text == 'جابوا' or text == 'مبرمج السورس' then  
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
 local bains = LuaTele.getUser(msg.sender.user_id)
@@ -6767,7 +6764,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(1965534755,0,'*\n ✧ مرحباً عزيزي المبرمج جابوا \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ -› معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(1965534755,0,'*\n ✧ هناك شخص يريدك يا سيدي المطور جابوا \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ -› معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 if text == 'المبرمج جيكا' or text == 'جيكا' or text == 'عوز بوت' then  
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -6795,7 +6792,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(5055146093,0,'*\n ✧ مرحباً عزيزي المبرمج جيكا \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ -› معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(5055146093,0,'*\n ✧ هناك شخص يريدك يا سيدي المبرمج جيكا \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ -› معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 if text == 'المساعد' or text == 'مساعد' then   
 local id = Redis:get(Saidi.."id:HELPBEVQ:Groups")
@@ -6858,21 +6855,6 @@ Text = ' ✧ الشخص الذي قام باضافتك هو ‹- '..Name
 return LuaTele.sendText(msg_chat_id,msg_id,Text,"md",true) 
 else
 return LuaTele.sendText(msg_chat_id,msg_id,"*✧ انت دخلت عبر الرابط يقميل*","md",true) 
-end
-end
-if text and text:match("(.*)(مين ضافني)(.*)") then
-local StatusMember = LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele
-if (StatusMember == "chatMemberStatusCreator") then
-return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ انت منشئ المجموعه*","md",true) 
-end
-local Added_Me = Redis:get(Saidi.."Who:Added:Me"..msg_chat_id..':'..msg.sender.user_id)
-if Added_Me then 
-UserInfo = LuaTele.getUser(Added_Me)
-local Name = '['..UserInfo.first_name..'](tg://user?id='..Added_Me..')'
-Text = ' ✧ الشخص الذي قام باضافتك هو -› '..Name
-return LuaTele.sendText(msg_chat_id,msg_id,Text,"md",true) 
-else
-return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ انت دخلت عبر الرابط محدش ضافك*","md",true) 
 end
 end
 if text == 'بيقول اي' or text == "قال اي" or text == "يقول اي" or text == "وش يقول" then  
@@ -7910,7 +7892,7 @@ for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
 if Info_Members.members[k].status.luatele == "chatMemberStatusAdministrator" then
 x = x + 1
-Admin = '→ *{ ادمن }*'
+Admin = '〘  ادمن 〙'
 else
 Admin = ""
 end
@@ -13059,7 +13041,7 @@ else
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = '〘 المبرمج جيكا 〙',type = 'text'},{text = '〘 المبرمج جابوا 〙',type = 'text'},
+{text = '〘 المبرمج جيكا 〙',type = 'text'},{text = '〘 المطور جابوا 〙',type = 'text'},
 },
 {
 {text = '〘 تفعيل التواصل 〙',type = 'text'},{text = '〘 تعطيل التواصل 〙', type = 'text'},
@@ -13237,10 +13219,10 @@ local msg_id = msg.id/2097152/0.5
 end
 end
  
-if text == 'المبرمج مصطفي' or text == 'مصطفي' or text == 'المبرمج' or text == 'صاصا' then  
-local UserId_Info = LuaTele.searchPublicChat("M_P_L_6")
+if text == 'المطور جابوا' or text == 'جابوا' or text == 'مبرمج السورس' then  
+local UserId_Info = LuaTele.searchPublicChat("J_A_B_W_A")
 if UserId_Info.id then
-local  ban = LuaTele.getUser(UserId_Info.id)
+local  Jabwa = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
 if  bain.bio then
 Bio =  bain.bio
@@ -13249,21 +13231,21 @@ Bio = 'لا يوجد'
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "  ❲ Saidi  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '< Developers Saidi  >', url = "https://t.me/M_P_L_6"}
+{text = '𓄼• 𝗝ٰٖ𝗔ٰٖ𝗕ٰٖ𝗪ٰٖ𝗔ٰٖ ➪🇳🇱 •𓄹', url = "https://t.me/J_A_B_W_A"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "- معلومات مطور السورس : \\nn: name Dev . [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n\n ["..Bio.."]"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '< Developers Saidi  >', url = "https://t.me/M_P_L_6"}
+{text = '𓄼• 𝗝ٰٖ𝗔ٰٖ𝗕ٰٖ𝗪ٰٖ𝗔ٰٖ ➪🇳🇱 •𓄹', url = "https://t.me/J_A_B_W_A"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -13271,11 +13253,10 @@ local msg_id = msg.id/2097152/0.5
 end
 end
 end
-
-if text == 'المبرمج بودي' or text == 'بودي' or text == 'عبدالله' or text == 'بدبد' then  
-local UserId_Info = LuaTele.searchPublicChat("BoOdY_BaSha")
+if text == 'المبرمج جيكا' or text == 'جيكا' or text == 'عوز بوت' then  
+local UserId_Info = LuaTele.searchPublicChat("Dev_Jeka")
 if UserId_Info.id then
-local  ban = LuaTele.getUser(UserId_Info.id)
+local  Jabwa = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
 if  bain.bio then
 Bio =  bain.bio
@@ -13284,21 +13265,21 @@ Bio = 'لا يوجد'
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "  ❲ Saidi  Source ❳\n— — — — — — — — —\n 𖥔*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n𖥔 *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '< Developers Saidi  >', url = "https://t.me/BoOdY_BaSha"}
+{text = '〘⃟✶┊⃟𖤐.🖤⃟.𝑱𝑬𝑲𝑨⃟.🖤.𖤐⃟┊✶⃟〙', url = "https://t.me/Dev_Jeka"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "- معلومات مطور السورس : \\nn: name Dev . [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n\n ["..Bio.."]"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '< Developers Saidi  >', url = "https://t.me/BoOdY_BaSha"}
+{text = '〘⃟✶┊⃟𖤐.🖤⃟.𝑱𝑬𝑲𝑨⃟.🖤.𖤐⃟┊✶⃟〙', url = "https://t.me/Dev_Jeka"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -15144,7 +15125,7 @@ local TextHelp = [[*
 𓄼• رسائلي •𓄹
 𓄼• مسح رسائلي •𓄹
 𓄼• زخرفه •𓄹
-𓄼• قول + الكلمه •??
+𓄼• قول + الكلمه •𓄹
 𓄼• حروف •𓄹
 𓄼• اطردني •𓄹
 𓄼• انصحني •𓄹
