@@ -3145,48 +3145,15 @@ data = {
 return LuaTele.sendText(msg_chat_id,msg_id,Jabwaiusername,"md",false, false, false, false, reply_markup)
 end
 if text == 'اسمي' then
-local Jabwa = LuaTele.getUser(msg.sender.user_id)
+local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = " `"..ban.first_name.."` "
 else
 news = " لا يوجد"
 end
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text =ban.first_name,url = "https://t.me/"..Jabwa.username..""}, },}}
+{{text = ban.first_name, url = "https://t.me/"..ban.username..""}, },}}
 return LuaTele.sendText(msg_chat_id, msg_id, 'اسمك -› '..news, 'md', false, false, false, false, reply_markup)
-end
-if text == 'جبوا' then
-local Jabwa = LuaTele.getUser(msg.sender.user_id)
-if  bain.bio then
-Bio =  bain.bio
-else
-Bio = 'لا يوجد'
-end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text =bain.bio,url = "https://t.me/"..Jabwa.username..""}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, 'بايو -› '..Bio, 'md', false, false, false, false, reply_markup)
-end
-if text == 'بايو' then
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_n = user_info.first_name
-local bio = getbio(msg.sender.user_id)
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text =first_name,url = "https://t.me/"..get_bio.username..""}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, 'بايو : '..bio, 'md', false, false, false, false, reply_markup)
-end
-if text == '77' then
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_n = user_info.first_name
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text =user_info.first_name,url = "https://t.me/"..user_info.username..""}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, 'اسمك : '..first_n, 'md', false, false, false, false, reply_markup)
-end
-if text == '99' then
-local Jabwa = LuaTele.getUser(msg.sender.user_id)
-local news = '🌝🖤 رتبتك في البوت -› '..msg.Name_Controller
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text =news,url = "https://t.me/"..Jabwa.username..""}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
 end
 if text == 'صلاحياتي' then
 if msg.can_be_deleted_for_all_users == false then
@@ -11428,23 +11395,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(Saidi.."Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/Mysasa'},
-},
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url='https://t.me/S_a_i_d_i'},
-},
-}
-}
 LuaTele.sendText(msg_chat_id,msg_id,[[*
-▱▰▱▰▱▰▱▰▱▰▱▰▱▰
 ✧ ارسل اذاعتك لنشرها في الجروبات 
  ✧ للخروج من الامر ارسل 〘الغاء〙
-▱▰▱▰▱▰▱▰▱▰▱▰▱▰
-*]],"md",true, false, false, false, reply_markup)
+*]],"md",true)  
 return false
 end
 if text=="اذاعه خاص" then 
@@ -11938,7 +11892,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'المـطـور الاسـاسـي', data = msg.sender.user_id..'/Newadsudos'},
+{text = 'المـطـور الاسـاسـي', data = msg.sender.user_id..'/yaaaaa'},
 },
 {
 {text = 'اسـم البــوت', data = msg.sender.user_id..'/Namebot'},
@@ -14193,17 +14147,7 @@ if Text and Text:match('(%d+)/UnKed') then
     LuaTele.setChatMemberStatus(ChatId,UserId,'restricted',{1,1,1,1,1,1,1,1})
     return LuaTele.editMessageText(ChatId,Msg_id," ✧ تم التحقق منك اجابتك صحيحه يمكنك الدردشه الان", 'md', false)
     end
-if Text and Text:match('(%d+)/Mysasa') then
-local listYt = Text:match('(%d+)/Mysasa')
-if tonumber(listYt) == tonumber(IdUser) then
-Redis:del(Saidi.."Broadcasting:Groups:Pin"..ChatId..""..IdUser) 
-Redis:del(Saidi.."Broadcasting:Groups"..IdUser..":"..ChatId)
-Redis:del(Saidi.."Broadcasting:Users"..IdUser..":"..ChatId)
-Redis:del(Saidi.."Broadcasting:Groups:Fwd"..IdUser..":"..ChatId)
-Redis:del(Saidi.."Broadcasting:Users:Fwd"..IdUser..":"..ChatId)
-LuaTele.editMessageText(ChatId,Msg_id," ✧  تم الغاء الامر", 'md')
-end
-end
+
 if Text and Text:match('(%d+)/delamrredis') then
 local listYt = Text:match('(%d+)/delamrredis')
 if tonumber(listYt) == tonumber(IdUser) then
@@ -16427,6 +16371,7 @@ end
 LuaTele.answerCallbackQuery(data.id, " ✧ تم قفل جميع الاوامر بنجاح  ", true)
 end
 end
+
 if Text and Text:match('(%d+)/Redis') then
 local UserId = Text:match('(%d+)/Redis')
 LuaTele.answerCallbackQuery(data.id, " ✧ تم الغاء الامر بنجاح", true)
@@ -16434,18 +16379,13 @@ if tonumber(IdUser) == tonumber(UserId) then
 return LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 end
 end
-if Text and Text:match('(%d+)/Newadsudos') then
-local UserId = Text:match('(%d+)/Newadsudos')
-if tonumber(IdUser) == tonumber(UserId) then
-LuaTele.editMessageText(ChatId,Msg_id,"* ✧ ارسل معرف المطور الاساسي مع @*","md",true) 
-Redis:set(Saidi.."Saidi:AddSudosNew"..ChatId,true)
-end
-end
+
 if Text and Text:match('/leftgroup@(.*)') then
 local UserId = Text:match('/leftgroup@(.*)')
 LuaTele.answerCallbackQuery(data.id, " ✧ تم مغادره البوت من الجروب", true)
 LuaTele.leaveChat(UserId)
 end
+
 if Text and Text:match('(%d+)/groupNumseteng//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNumseteng//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
