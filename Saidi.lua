@@ -4072,7 +4072,6 @@ Redis:sadd(Saidi.."Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_i
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ✧ تم ترقيته مميز  ").Reply,"md",true)  
 end
 end
-end
 ---رفع التسليه---
 if TextMsg == "خول" then
 if ChannelJoin(msg) == false then
