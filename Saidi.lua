@@ -7004,658 +7004,282 @@ if text == 'هاي' or text == 'هيي' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ ردود السورس معطلة*","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,'*خالتك جرت ورايا 😹💔*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'[خالتك جرت ورايا 😹💔](t.me/S_a_i_d_i)',"md",false, false, false, false, reply_markup)
 end
 if text == 'سلام عليكم' or text == 'السلام عليكم' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ ردود السورس معطلة*","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*وعليكم السلام 🌝💜*',"md",false, false, false, false, reply_markup)
 end
 if text == 'سلام' or text == 'مع سلامه' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*مع الف سلامه يقلبي متجيش تاني 😹💔🎶*',"md",false, false, false, false, reply_markup)
 end
 if text == 'برايفت' or text == 'تع برايفت' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*خدوني معاكم برايفت والنبي 🥺💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'النبي' or text == 'صلي علي النبي' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*عليه الصلاه والسلام 🌝💛*',"md",false, false, false, false, reply_markup)
 end
 if text == 'نعم' or text == 'يا نعم' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*نعم الله عليك 🌚❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == '🙄' or text == '🙄🙄' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,'* نزل عينك تحت كدا علشان هتخاد علي قفاك ??❤️*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'* نزل عينك تحت كدا علشان هتخاد علي قفاك 💃🌝*',"md",false, false, false, false, reply_markup)
 end
 if text == '🙄' or text == '🙄🙄' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*نزل عينك تحت كدا علشان هتخاد علي قفاك 😒❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == '😂' or text == '😂😂' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*ضحكتك عثل زيكك ينوحيي 🌝❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == '😹' or text == '😹' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*ضحكتك عثل زيكك ينوحيي 🌝❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == '🤔' or text == '🤔🤔' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'* بتفكر في اي 🤔*',"md",false, false, false, false, reply_markup)
 end
 if text == '🌚' or text == '🌝' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*القمر ده شبهك 🙂❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == '💋' or text == '💋💋' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*انا عايز مح انا كمان 🥺💔*',"md",false, false, false, false, reply_markup)
 end
 if text == '😭' or text == '😭😭' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*بتعيط تيب لي طيب 😥*',"md",false, false, false, false, reply_markup)
 end
 if text == '🥺' or text == '🥺🥺' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*متزعلش بحبك 😻🤍*',"md",false, false, false, false, reply_markup)
 end
 if text == '😒' or text == '😒😒' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*عدل وشك ونت بتكلمني 😒🙄*',"md",false, false, false, false, reply_markup)
 end
 if text == 'بحبك' or text == 'حبق' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*وانا كمان بعشقك يا روحي 🤗🥰*',"md",false, false, false, false, reply_markup)
 end
 if text == 'مح' or text == 'هات مح' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*محات حياتي يروحي 🌝❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == 'هلا' or text == 'هلا وغلا' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*هلا بيك ياروحي 👋*',"md",false, false, false, false, reply_markup)
 end
 if text == 'هشش' or text == 'هششخرص' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*بنهش كتاكيت احنا هنا ولا اي ??😹*',"md",false, false, false, false, reply_markup)
 end
 if text == 'الحمد الله' or text == 'بخير الحمد الله' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*دايما ياحبيبي 🌝❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == 'بف' or text == 'بص بف' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*وحيات امك ياكبتن خدوني معاكو بيف 🥺💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'خاص' or text == 'بص خاص' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*ونجيب اشخاص 😂👻*',"md",false, false, false, false, reply_markup)
 end
 if text == 'صباح الخير' or text == 'مساء الخير' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*انت الخير يعمري 🌝❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == 'صباح النور' or text == 'باح الخير' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*صباح العسل 😻🤍*',"md",false, false, false, false, reply_markup)
 end
 if text == 'حصل' or text == 'حثل' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*خخخ امال 😹*',"md",false, false, false, false, reply_markup)
 end
 if text == 'اه' or text == 'اها' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*اه اي يا قدع عيب 😹💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'كسم' or text == 'كسمك' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*عيب ياوسخ 🙄💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'بوتي' or text == 'يا بوتي' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'روح وعقل بوتك 🥺💔',"md",false, false, false, false, reply_markup)
 end
 if text == 'متيجي' or text == 'تع' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*لا عيب بتكسف 😹💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'هيح' or text == 'لسه صاحي' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*صح النوم 😹💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'منور' or text == 'نورت' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*ده نورك ي قلبي 🌝💙*',"md",false, false, false, false, reply_markup)
 end
 if text == 'باي' or text == 'انا ماشي' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*ع فين لوين رايح وسايبنى 🥺💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'ويت' or text == 'ويت يحب' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*اي الثقافه دي 😒😹*',"md",false, false, false, false, reply_markup)
 end
 if text == 'خخخ' or text == 'خخخخخ' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*اهدا يوحش ميصحش كدا 😒??*',"md",false, false, false, false, reply_markup)
 end
 if text == 'شكرا' or text == 'مرسي' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*العفو ياروحي 🙈🌝*',"md",false, false, false, false, reply_markup)
 end
 if text == 'حلوه' or text == 'حلو' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*انت الي حلو ياقمر 🤤🌝*',"md",false, false, false, false, reply_markup)
 end
 if text == 'بموت' or text == 'هموت' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*موت بعيد م ناقصين مصايب 😑😂*',"md",false, false, false, false, reply_markup)
 end
 if text == 'اي' or text == 'ايه' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*جتك اوهه م سامع ولا ايي 😹👻*',"md",false, false, false, false, reply_markup)
 end
 if text == 'طيب' or text == 'تيب' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*فرح خالتك قريب 😹💋💃🏻*',"md",false, false, false, false, reply_markup)
 end
 if text == 'حاضر' or text == 'حتر' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*حضرلك الخير يارب 🙂❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == 'جيت' or text == 'انا جيت' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'* لف ورجع تانى مشحوار 😂🚶‍♂👻*',"md",false, false, false, false, reply_markup)
 end
 if text == 'بخ' or text == 'عو' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*يوه خضتني ياسمك اي 🥺💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'حبيبي' or text == 'حبيبتي' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*اوه ياه 🌝😂*',"md",false, false, false, false, reply_markup)
 end
 if text == 'تمام' or text == 'تمم' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'* امك اسمها احلام 😹😹*',"md",false, false, false, false, reply_markup)
 end
 if text == 'خلاص' or text == 'خلص' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*خلصتت روحكك يبعيد 😹💔*',"md",false, false, false, false, reply_markup)
 end
 if text == 'سي في' or text == 'سيفي' then
 if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-}
-}
 return LuaTele.sendText(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه لغيرك 😎😂*',"md",false, false, false, false, reply_markup)
 end
 if text and text:match("^all (.*)$") or text:match("^@all (.*)$") or text == "@all" or text == "all" then 
@@ -11399,12 +11023,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/Mysasa'},
+{text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/delamrredis'},
 },
 }
 }
 LuaTele.sendText(msg_chat_id,msg_id,[[*
-تيست
+✧ ارسل اذاعتك لنشرها في الجروبات 
+ ✧ للخروج من الامر ارسل 〘الغاء〙
 *]],"md",true, false, false, false, reply_markup)
 return false
 end
@@ -12993,26 +12618,24 @@ Redis:set(Saidi.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائ
 Redis:set(Saidi.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
 
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
- ✧ تم ترتيب الاوامر بالشكل التالي ~
-— — — — — — — — —
- ✧  ايدي - ا .
- ✧  رفع مميز - م .
- ✧ رفع ادمن - اد .
- ✧  رفع مدير - مد . 
- ✧  رفع منشى - من . 
- ✧  رفع منشئ الاساسي - اس  .
- ✧  رفع مطور - مط .
- ✧ رفع مطور ثانوي - ثانوي .
- ✧  تنزيل الكل - تك .
- ✧  تعطيل الايدي بالصوره - تعط .
- ✧  تفعيل الايدي بالصوره - تفع .
- ✧  الرابط - ر .
- ✧  الردود - رر .
- ✧  مسح المكتومين - ،، .
- ✧  اضف رد - رد .
- ✧  مسح سحكاتي - سح .
- ✧  مسح رسائلي - رس .
- ✧  غنيلي - غ .
+ ✧ تم ترتيب الاوامر بالشكل التالي 
+ ✧  ايدي - ا 
+ ✧  رفع مميز - م 
+ ✧ رفع ادمن - اد 
+ ✧  رفع مدير - مد 
+ ✧  رفع منشى - من 
+ ✧  رفع منشئ الاساسي - اس 
+ ✧  رفع مطور - مط 
+ ✧ رفع مطور ثانوي - ثانوي 
+ ✧  تنزيل الكل - تك 
+ ✧  تعطيل الايدي بالصوره - تعط 
+ ✧  تفعيل الايدي بالصوره - تفع 
+ ✧  الرابط - ر 
+ ✧  الردود - رر 
+ ✧  اضف رد - رد 
+ ✧  مسح سحكاتي - سح 
+ ✧  مسح رسائلي - رس 
+ ✧  غنيلي - غ 
 *]],"md")
 end
 
@@ -13384,7 +13007,7 @@ local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍ�
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼• 𝗝ٰٖ𝗔ٰٖ𝗕ٰٖ𝗪ٰٖ𝗔ٰٖ ➪🇳🇱 •𓄹', url = "https://t.me/J_A_B_W_A"}
+{text = '𓄼• 𝗝ٰٖ𝗔ٰٖ𝗕ٰٖ??ٰٖ𝗔ٰٖ ➪🇳🇱 •𓄹', url = "https://t.me/J_A_B_W_A"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -14215,7 +13838,7 @@ end
 if Text and Text:match('(%d+)/delamrredis') then
 local listYt = Text:match('(%d+)/delamrredis')
 if tonumber(listYt) == tonumber(IdUser) then
-Redis:del(Saidi.."Redis:Id:Group"..ChatId..""..IdUser) 
+Redis:del(Saidi.."Send:Bc:Grops"..ChatId..""..IdUser) 
 Redis:del(Saidi.."Se1t:Rd"..IdUser..":"..ChatId)
 Redis:del(Saidi.."Set:Manager:rd"..IdUser..":"..ChatId)
 Redis:del(Saidi.."Set:Rd"..IdUser..":"..ChatId)
