@@ -12309,49 +12309,6 @@ msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == '14' then
-local photo = LuaTele.getUserProfilePhotos(Saidi)
-local UserInfo = LuaTele.getUser(Saidi)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-local NamesBot = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
-local BotName = {
-'〈𓄼❤️𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼❤️𓄹〉',
-'〈𓄼💛𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼💛𓄹〉',
-'〈𓄼💙𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼💙𓄹〉',
-'〈𓄼🤎𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼🤎𓄹〉',
-'〈𓄼🤍𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼🤍𓄹〉',
-'〈𓄼🧡𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼🧡𓄹〉',
-'〈𓄼💜𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼💜𓄹〉',
-'〈𓄼💚𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼💚𓄹〉',
-'〈𓄼🖤𓄹 ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴀɪᴅɪ 𓄼🖤𓄹〉',
-}
-NamesBots = BotName[math.random(#BotName)]
-if ban.username then
-Creator = " "..ban.first_name.." "
-else
-Creator = " صعيدي\n"
-end
-local texxtt = ''..NameBots..''
-if photo.total_count > 0 then
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = NamesBots, url = 't.me/S_a_i_d_i'}, 
-},
-{
-{text = Creator, url = 't.me/'..UserBot..'?start'}, 
-},
-{
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
 if text == "تغيير" or text == "تغيير اسم البوت" or text == "تغيير المطور الاساسي"  then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
