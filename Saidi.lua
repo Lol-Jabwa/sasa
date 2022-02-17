@@ -11399,7 +11399,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/delamrredis'},
+{text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/Mysasa'},
 },
 }
 }
@@ -14201,6 +14201,17 @@ if Text and Text:match('(%d+)/UnKed') then
     return LuaTele.editMessageText(ChatId,Msg_id," ✧ تم التحقق منك اجابتك صحيحه يمكنك الدردشه الان", 'md', false)
     end
 
+if Text and Text:match('(%d+)/Mysasa') then
+local listYt = Text:match('(%d+)/Mysasa')
+if tonumber(listYt) == tonumber(IdUser) then
+Redis:del(Saidi.."Bc:Grops:Pin"..ChatId..""..IdUser) 
+Redis:del(Saidi.."Send:Bc:Grops"..IdUser..":"..ChatId)
+Redis:del(Saidi.."Send:Bc:Pv"..IdUser..":"..ChatId)
+Redis:del(Saidi.."Send:Fwd:Grops"..IdUser..":"..ChatId)
+Redis:del(Saidi.."Send:Fwd:Pv"..IdUser..":"..ChatId)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧  تم الغاء امر الاذاعه *", 'md')
+end
+end
 if Text and Text:match('(%d+)/delamrredis') then
 local listYt = Text:match('(%d+)/delamrredis')
 if tonumber(listYt) == tonumber(IdUser) then
