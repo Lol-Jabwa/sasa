@@ -1718,7 +1718,7 @@ LuaTele.sendText(v, 0,""..text.."")
 Redis:set(Saidi.."PinMsegees:"..v,text)
 end
 end
-LuaTele.sendText(msg_chat_id,msg_id,"* ✧ تم التثبيت في ( "..#list.." ) جروب *","md",true)      
+LuaTele.sendText(msg_chat_id,msg_id,"* ✧ تم التثبيت في ( "..#list.." ) جروبات *","md",true)      
 Redis:del(Saidi.."Bc:Grops:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id) 
 return false
 end
@@ -11395,10 +11395,17 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(Saidi.."Send:Bc:Grops" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/delamrredis'},
+},
+}
+}
 LuaTele.sendText(msg_chat_id,msg_id,[[*
-✧ ارسل اذاعتك لنشرها في الجروبات 
- ✧ للخروج من الامر ارسل 〘الغاء〙
-*]],"md",true)  
+تيست
+*]],"md",true, false, false, false, reply_markup)
 return false
 end
 if text=="اذاعه خاص" then 
