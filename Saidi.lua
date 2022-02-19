@@ -3145,7 +3145,9 @@ local banhas = 'ᴜѕᴇ -› '..banusername
 local rengk = 'ѕᴛᴀ -› '..RinkBot
 local masha = 'ᴍѕɢ -› '..TotalMsg
 local BIO = 'ʙɪᴏ -› '..getbio(msg.sender.user_id)
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+if photo.total_count > 0 then
+data = {} 
+data.inline_keyboard = {
 {
 {text = uass, url = "https://t.me/"..ban.username..""}, 
 },
@@ -3165,8 +3167,9 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {text = BIO, url = "https://t.me/"..ban.username..""}, 
 },
 }
-}
-return LuaTele.sendText(msg_chat_id, msg_id, mostafa, 'md', false, false, false, false, reply_markup)
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(mostafa).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
 end
 if text == 'رتبتي' then
 local Jabwa = LuaTele.getUser(msg.sender.user_id)
