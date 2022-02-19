@@ -3105,6 +3105,7 @@ end
 end
 if text == 'معلوماتي' then
 local ban = LuaTele.getUser(msg.sender.user_id)
+local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 if ban.first_name then
 news = " "..ban.first_name.." "
 else
@@ -4265,7 +4266,7 @@ if Redis:sismember(Saidi.."8by:Group"..msg_chat_id,Message_Reply.sender.user_id)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"✧ هو كده كده محطوط ف قايمة الاغبية  😂 😂 ").Reply,"md",true)  
 else
 Redis:sadd(Saidi.."8by:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم رفعه غبي المجموعة  ??  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم رفعه غبي المجموعة  😂  ").Reply,"md",true)  
 end
 end
 end
