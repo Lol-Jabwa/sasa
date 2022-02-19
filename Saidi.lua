@@ -3104,8 +3104,21 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 end
 end
 if text == 'معلوماتي' then
-if not Redis:get(Saidi.."Status:Id"..msg_chat_id) then
-return false
+local ban = LuaTele.getUser(msg.sender.user_id)
+if ban.first_name then
+news = " "..ban.first_name.." "
+else
+news = " لا يوجد"
+end
+if ban.first_name then
+UserName = ' '..ban.first_name..' '
+else
+UserName = 'لا يوجد'
+end
+if ban.username then
+banusername = '@'..ban.username..''
+else
+banusername = 'لا يوجد'
 end
 local Jabwaa = {
 
@@ -3122,34 +3135,37 @@ local Jabwaa = {
 "〈 قمر التلي يود اهو 😻🤍 〉",
 } 
 local mostafa = Jabwaa[math.random(#Jabwaa)]
-local Jabwa = LuaTele.getUser(msg.sender.user_id)
-local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 local UserId = msg.sender.user_id
 local RinkBot = msg.Name_Controller
-local TotalMsg = Redis:get(Saidi..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
-local TotalEdit = Redis:get(Saidi..'Num:Message:Edit'..msg_chat_id..msg.sender.user_id) or 0
-if photo.total_count > 0 then
-data = {} 
-data.inline_keyboard = {
+local TotalMsg = Redis:get(FIRE..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
+local news = 'ɪᴅ -› '..UserId
+local uass = 'ɴᴀᴍᴇ -› '..UserName
+local banhas = 'ᴜѕᴇ -› '..banusername
+local rengk = 'ѕᴛᴀ -› '..RinkBot
+local masha = 'ᴍѕɢ -› '..TotalMsg
+local BIO = 'ʙɪᴏ -› '..getbio(msg.sender.user_id)
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {
-{text =UserId,url = "https://t.me/"..Jabwa.username..""}, 
+{text = uass, url = "https://t.me/"..ban.username..""}, 
 },
 {
-{text =RinkBot,url = "https://t.me/"..Jabwa.username..""}, 
+{text = news, url = "https://t.me/"..ban.username..""}, 
 },
 {
-{text =TotalMsg,url = "https://t.me/"..Jabwa.username..""}, 
+{text = banhas, url = "https://t.me/"..ban.username..""}, 
 },
 {
-{text =TotalEdit,url = "https://t.me/"..Jabwa.username..""}, 
+{text = rengk, url = "https://t.me/"..ban.username..""}, 
 },
 {
-{text =mostafa,url = "https://t.me/"..Jabwa.username..""}, 
+{text = masha, url = "https://t.me/"..ban.username..""}, 
+},
+{
+{text = BIO, url = "https://t.me/"..ban.username..""}, 
 },
 }
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(mostafa).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
-end
+}
+return LuaTele.sendText(msg_chat_id, msg_id, mostafa, 'md', false, false, false, false, reply_markup)
 end
 if text == 'رتبتي' then
 local Jabwa = LuaTele.getUser(msg.sender.user_id)
@@ -12898,7 +12914,7 @@ name = string.gsub(name,"👩‍🍳","👨‍🍳👨‍🍳👨‍🍳👨‍�
 name = string.gsub(name,"🧚‍♀","🧚‍♂🧚‍♂🧚‍♂🧚‍♂🧚‍♀🧚‍♂🧚‍♂")
 name = string.gsub(name,"🧜‍♂","🧜‍♀🧜‍♀🧜‍♀🧜‍♀🧜‍♀🧚‍♂🧜‍♀🧜‍♀🧜‍♀")
 name = string.gsub(name,"??‍♂","🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♂🧝‍♀🧝‍♀🧝‍♀")
-name = string.gsub(name,"🙍‍♂️","🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙍‍♂️🙎‍♂️🙎‍♂️🙎‍♂️")
+name = string.gsub(name,"🙍‍♂️","🙎‍♂️🙎‍♂️🙎‍♂️??‍♂️🙎‍♂️🙍‍♂️🙎‍♂️🙎‍♂️🙎‍♂️")
 name = string.gsub(name,"🧖‍♂️","🧖‍♀️🧖‍♀️??‍♀️🧖‍♀️🧖‍♀️🧖‍♂️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️")
 name = string.gsub(name,"👬","👭👭👭👭👭👬👭👭??")
 name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧👨‍👨‍👦👨‍👨‍👦")
