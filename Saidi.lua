@@ -3174,6 +3174,219 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(mostafa).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
 end
 end
+if text == '14' then
+local ban = LuaTele.getUser(msg.sender.user_id)
+local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
+if ban.first_name then
+news = " "..ban.first_name.." "
+else
+news = " لا يوجد"
+end
+if ban.first_name then
+UserName = ' '..ban.first_name..' '
+else
+UserName = 'لا يوجد'
+end
+if ban.username then
+banusername = '@'..ban.username..''
+else
+banusername = 'لا يوجد'
+end
+local Jabwaa = {
+
+"〈 صورتك عثل ينوحيي 🙈🌝 〉",
+
+"〈 صورتك ولا صورت القمر 🌙💕 〉",
+
+"〈 يخرشي علي العسل ده 🥺💔 〉", 
+
+"〈 جمالك ده طبيعي يولا 🙈💗 〉",
+
+"〈 غير بقاا صورتك يا قمر 🌚❤️ 〉",
+
+"〈 قمر التلي يود اهو 😻🤍 〉",
+} 
+local mostafa = Jabwaa[math.random(#Jabwaa)]
+local UserId = msg.sender.user_id
+local RinkBot = msg.Name_Controller
+local TotalMsg = Redis:get(Saidi..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
+local news = 'ɪᴅ -› '..UserId
+local uass = 'ɴᴀᴍᴇ -› '..UserName
+local banhas = 'ᴜѕᴇ -› '..banusername
+local rengk = 'ѕᴛᴀ -› '..RinkBot
+local masha = 'ᴍѕɢ -› '..TotalMsg
+local BIO = 'ʙɪᴏ -› '..getbio(msg.sender.user_id)
+if photo.total_count > 0 then
+data = {} 
+data.inline_keyboard = {
+{
+{text = uass, data = msg.sender.user_id...'/help3'}, 
+},
+{
+{text = news, data = msg.sender.user_id...'/help3'}, 
+},
+{
+{text = banhas, data = msg.sender.user_id...'/help3'}, 
+},
+{
+{text = rengk, data = msg.sender.user_id...'/help3'}, 
+},
+{
+{text = masha, data = msg.sender.user_id...'/help3'}, 
+},
+{
+{text = BIO, data = msg.sender.user_id...'/help3'},  
+},
+{
+{text = mostafa, data = msg.sender.user_id...'/help3'}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(mostafa).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
+end
+if text == '15' then
+local ban = LuaTele.getUser(msg.sender.user_id)
+local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
+if ban.first_name then
+news = " "..ban.first_name.." "
+else
+news = " لا يوجد"
+end
+if ban.first_name then
+UserName = ' '..ban.first_name..' '
+else
+UserName = 'لا يوجد'
+end
+if ban.username then
+banusername = '@'..ban.username..''
+else
+banusername = 'لا يوجد'
+end
+local Jabwaa = {
+
+"〈 صورتك عثل ينوحيي 🙈🌝 〉",
+
+"〈 صورتك ولا صورت القمر 🌙💕 〉",
+
+"〈 يخرشي علي العسل ده 🥺💔 〉", 
+
+"〈 جمالك ده طبيعي يولا 🙈💗 〉",
+
+"〈 غير بقاا صورتك يا قمر 🌚❤️ 〉",
+
+"〈 قمر التلي يود اهو 😻🤍 〉",
+} 
+local mostafa = Jabwaa[math.random(#Jabwaa)]
+local UserId = msg.sender.user_id
+local RinkBot = msg.Name_Controller
+local TotalMsg = Redis:get(Saidi..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
+local news = 'ɪᴅ -› '..UserId
+local uass = 'ɴᴀᴍᴇ -› '..UserName
+local banhas = 'ᴜѕᴇ -› '..banusername
+local rengk = 'ѕᴛᴀ -› '..RinkBot
+local masha = 'ᴍѕɢ -› '..TotalMsg
+local BIO = 'ʙɪᴏ -› '..getbio(msg.sender.user_id)
+if photo.total_count > 0 then
+data = {} 
+data.inline_keyboard = {
+{
+{text = uass, data = Message_Reply.sender.user_id...'/help3'}, 
+},
+{
+{text = news, data = Message_Reply.sender.user_id...'/help3'}, 
+},
+{
+{text = banhas, data = Message_Reply.sender.user_id...'/help3'}, 
+},
+{
+{text = rengk, data = Message_Reply.sender.user_id...'/help3'}, 
+},
+{
+{text = masha, data = Message_Reply.sender.user_id...'/help3'}, 
+},
+{
+{text = BIO, data = Message_Reply.sender.user_id...'/help3'},  
+},
+{
+{text = mostafa, data = Message_Reply.sender.user_id...'/help3'}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(mostafa).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
+end
+if text == '16' then
+local ban = LuaTele.getUser(msg.sender.user_id)
+local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
+if ban.first_name then
+news = " "..ban.first_name.." "
+else
+news = " لا يوجد"
+end
+if ban.first_name then
+UserName = ' '..ban.first_name..' '
+else
+UserName = 'لا يوجد'
+end
+if ban.username then
+banusername = '@'..ban.username..''
+else
+banusername = 'لا يوجد'
+end
+local Jabwaa = {
+
+"〈 صورتك عثل ينوحيي 🙈🌝 〉",
+
+"〈 صورتك ولا صورت القمر 🌙💕 〉",
+
+"〈 يخرشي علي العسل ده 🥺💔 〉", 
+
+"〈 جمالك ده طبيعي يولا 🙈💗 〉",
+
+"〈 غير بقاا صورتك يا قمر 🌚❤️ 〉",
+
+"〈 قمر التلي يود اهو 😻🤍 〉",
+} 
+local mostafa = Jabwaa[math.random(#Jabwaa)]
+local UserId = msg.sender.user_id
+local RinkBot = msg.Name_Controller
+local TotalMsg = Redis:get(Saidi..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
+local news = 'ɪᴅ -› '..UserId
+local uass = 'ɴᴀᴍᴇ -› '..UserName
+local banhas = 'ᴜѕᴇ -› '..banusername
+local rengk = 'ѕᴛᴀ -› '..RinkBot
+local masha = 'ᴍѕɢ -› '..TotalMsg
+local BIO = 'ʙɪᴏ -› '..getbio(msg.sender.user_id)
+if photo.total_count > 0 then
+data = {} 
+data.inline_keyboard = {
+{
+{text = uass, data =UserId..'/'.. 'unlock_spam'},
+},
+{
+{text = news, data =UserId..'/'.. 'unlock_spam'},
+},
+{
+{text = banhas, data =UserId..'/'.. 'unlock_spam'},
+},
+{
+{text = rengk, data =UserId..'/'.. 'unlock_spam'},
+},
+{
+{text = masha, data =UserId..'/'.. 'unlock_spam'},
+},
+{
+{text = BIO, data =UserId..'/'.. 'unlock_spam'},
+},
+{
+{text = mostafa, data =UserId..'/'.. 'unlock_spam'},
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(mostafa).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
+end
 if text == 'رتبتي' then
 local Jabwa = LuaTele.getUser(msg.sender.user_id)
 local news = '🌝🖤 رتبتك في البوت -› '..msg.Name_Controller
@@ -7243,7 +7456,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n ✧ هناك شخص يريدك يا سيدي المطور \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› @'..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n ✧ هناك شخص يريدك يا سيدي المطور \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› '..basgk..'@ \n*',"md",false, false, false, false, reply_markup)
 end
 if text == 'المطور جابوا' or text == 'جابوا' or text == 'مبرمج السورس' then  
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -7271,7 +7484,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(1965534755,0,'*\n ✧ هناك شخص يريدك يا سيدي المطور جابوا \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› @'..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(1965534755,0,'*\n ✧ هناك شخص يريدك يا سيدي المطور جابوا \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› '..basgk..'@ \n*',"md",false, false, false, false, reply_markup)
 end
 if text == 'المبرمج جيكا' or text == 'جيكا' or text == 'عوز بوت' then  
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -7299,7 +7512,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(5055146093,0,'*\n ✧ هناك شخص يريدك يا سيدي المبرمج جيكا \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› @'..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(5055146093,0,'*\n ✧ هناك شخص يريدك يا سيدي المبرمج جيكا \nشخص ما يحتاج الي مساعده\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..klajq..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› '..basgk..'@ \n*',"md",false, false, false, false, reply_markup)
 end
 if text == "غنيلي" then
 local t = "*اليك اغنيه عشوائيه من البوت*"
@@ -11846,6 +12059,7 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ╣ • ❹ • ‹ اوامر المسح ›
 ╣ • ❺ • ‹ اوامر التفعيل والتعطيل ›
 ╝ • ❻ • ‹ اوامر الفتح والقفل ›
+𓄼• ᴄʜ -› [ᴏʀᴅᴇʀѕ sᴏᴜʀᴄᴇ sᴀɪᴅɪ](https://t.me/S_a_i_d_i)
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' or text == 'الالعاب التسليه' or text == 'الاضافات' or text == 'الالعاب الالكترونيه' then
 if not msg.Addictive then
