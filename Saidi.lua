@@ -7794,43 +7794,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه لغيرك 😎😂*',"md",false, false, false, false, reply_markup)
 end
-if text and text:match("^all (.*)$") or text:match("^@all (.*)$") or text == "@all" or text == "all" then 
-local ttag = text:match("^all (.*)$") or text:match("^@all (.*)$") 
-if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(6)..' 〙* ',"md",true)  
-end
-if Redis:get(Saidi.."lockalllll"..msg_chat_id) == "off" then
-return LuaTele.sendText(msg_chat_id,msg_id,'* ✧  تم تعطيل @all من قبل المدراء*',"md",true)  
-end
-local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 2000)
-x = 0 
-tags = 0 
-local list = Info_Members.members
-for k, v in pairs(list) do 
-local data = LuaTele.getUser(v.member_id.user_id)
-if x == 20 or x == tags or k == 0 then 
-tags = x + 8 
-if ttag then
-t = "#all "..ttag.."" 
-else
-t = "#all "
-end
-end 
-x = x + 1 
-tagname = data.first_name
-tagname = tagname:gsub("]","") 
-tagname = tagname:gsub("[[]","") 
-t = t.."⤻ ["..tagname.."](tg://user?id="..v.member_id.user_id.." 〙" 
-if x == 20 or x == tags or k == 0 then 
-if ttag then
-Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
-else 
-Text = t:gsub('#all,','#all\n')
-end
-sendText(msg_chat_id,Text,0,'md') 
-end 
-end 
-end 
 if Redis:get(Saidi.."zhrfa"..msg.sender.user_id) == "sendzh" then
 zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)..'')
 zx = JSON.decode(zh)
