@@ -11805,6 +11805,9 @@ keyboard.inline_keyboard = {
 {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
+{
+{text = '𖠪 اضف بوت '..NamesBot..' لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -11983,7 +11986,7 @@ keyboard.inline_keyboard = {
 {text = sudo_name, url = 'tg://user?id='..sudo_id},
 },
 {
-{text = 'اضف بوت '..NamesBot..' لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -13590,6 +13593,9 @@ keyboard.inline_keyboard = {
 },
 {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
+},
+{
+{text = '𖠪 اضف بوت '..NamesBot..' لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
