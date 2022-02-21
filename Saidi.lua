@@ -11792,7 +11792,7 @@ data = {
 return LuaTele.sendText(msg_chat_id,msg_id,'*⋆ مرحبا بك في قائمه روايات ⋆*',"md",false, false, false, false, reply_markup)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-local NamesBot = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
+local Mostafa = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
@@ -11807,7 +11807,7 @@ keyboard.inline_keyboard = {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
-{text = '𖠪 اضف بوت '..NamesBot..' لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = ' اضف بوت'..Mostafa..'𖠪 لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -13582,6 +13582,7 @@ end
 end
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
+local Mostafa = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
@@ -13596,7 +13597,7 @@ keyboard.inline_keyboard = {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
-{text = '𖠪 اضف بوت '..NamesBot..' لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = ' اضف بوت'..Mostafa..'𖠪 لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
