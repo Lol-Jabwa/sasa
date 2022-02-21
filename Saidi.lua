@@ -1,8 +1,4 @@
---[[
 
-
-
---]]
 URL     = require("./libs/url")
 JSON    = require("./libs/dkjson")
 serpent = require("libs/serpent")
@@ -7794,6 +7790,43 @@ return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه لغيرك 😎😂*',"md",false, false, false, false, reply_markup)
 end
+if text and text:match("^all (.*)$") or text:match("^@all (.*)$") or text == "@all" or text == "all" then 
+local ttag = text:match("^all (.*)$") or text:match("^@all (.*)$") 
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(6)..' 〙* ',"md",true)  
+end
+if Redis:get(Saidi.."lockalllll"..msg_chat_id) == "off" then
+return LuaTele.sendText(msg_chat_id,msg_id,'* ✧  تم تعطيل @all من قبل المدراء*',"md",true)  
+end
+local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 2000)
+x = 0 
+tags = 0 
+local list = Info_Members.members
+for k, v in pairs(list) do 
+local data = LuaTele.getUser(v.member_id.user_id)
+if x == 20 or x == tags or k == 0 then 
+tags = x + 8 
+if ttag then
+t = "#all "..ttag.."" 
+else
+t = "#all "
+end
+end 
+x = x + 1 
+tagname = data.first_name
+tagname = tagname:gsub("]","") 
+tagname = tagname:gsub("[[]","") 
+t = t.." ✧ ["..tagname.."](tg://user?id="..v.member_id.user_id.." 〙" 
+if x == 20 or x == tags or k == 0 then 
+if ttag then
+Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
+else 
+Text = t:gsub('#all,','#all\n')
+end
+sendText(msg_chat_id,Text,0,'md') 
+end 
+end 
+end
 if Redis:get(Saidi.."zhrfa"..msg.sender.user_id) == "sendzh" then
 zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)..'')
 zx = JSON.decode(zh)
@@ -7884,7 +7917,7 @@ if photo.total_count > 0 then
 data = {} 
 data.inline_keyboard = {
 {
-{text ='نسبه جمالك يا قمر '..rdbhoto..' 🌝🖤',url = "https://t.me/"..Jabwa.username..""}, 
+{text ='اضف بوت '..Name:Bot..' لمجموعتك',url = "https://t.me/"..Jabwa.username..""}, 
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -8088,7 +8121,7 @@ x = x + 1
 tagname = data.first_name
 tagname = tagname:gsub("]","") 
 tagname = tagname:gsub("[[]","") 
-t = t.."⤻ ["..tagname.."](tg://user?id="..v.member_id.user_id..")" 
+t = t.." ✧ ["..tagname.."](tg://user?id="..v.member_id.user_id..")" 
 if x == 10 or x == tags or k == 0 then 
 if ttag then
 Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
@@ -11807,7 +11840,6 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ╣ • ❹ • ‹ اوامر المسح ›
 ╣ • ❺ • ‹ اوامر التفعيل والتعطيل ›
 ╝ • ❻ • ‹ اوامر الفتح والقفل ›
-𓄼• ᴄʜ -› [ᴏʀᴅᴇʀѕ sᴏᴜʀᴄᴇ sᴀɪᴅɪ](https://t.me/S_a_i_d_i)
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' or text == 'الالعاب التسليه' or text == 'الاضافات' or text == 'الالعاب الالكترونيه' then
 if not msg.Addictive then
@@ -11951,7 +11983,7 @@ keyboard.inline_keyboard = {
 {text = sudo_name, url = 'tg://user?id='..sudo_id},
 },
 {
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف بوت '..Name:Bot..' لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
