@@ -1,4 +1,8 @@
+--[[
 
+
+
+--]]
 URL     = require("./libs/url")
 JSON    = require("./libs/dkjson")
 serpent = require("libs/serpent")
@@ -626,6 +630,7 @@ MsgText = 'امبروطور التفاعل 👍'
 end 
 return MsgText 
 end
+
 function Getpermissions(ChatId)
 local Get_Chat = LuaTele.getChat(ChatId)
 if Get_Chat.permissions.can_add_web_page_previews then
@@ -652,6 +657,7 @@ end
 if Get_Chat.permissions.can_send_polls then
 polls = true else polls = false
 end
+
 return{
 web = web,
 info = info,
@@ -732,19 +738,19 @@ SilentGroup = Redis:sismember(Saidi.."SilentGroup:Group"..ChatId,UserId)
 }
 end
 function Reply_Status(UserId,TextMsg)
-local UserInfo = LuaTele.getUser(UserId)
-if UserInfo.username then
-UserInfousername = '['..UserInfo.first_name..'](t.me/'..UserInfo.username..' 〙'
+local Jabwa = LuaTele.getUser(UserId)
+if Jabwa.username then
+Jabwausername = '['..Jabwa.first_name..'](t.me/'..Jabwa.username..' 〙'
 else
-UserInfousername = '['..UserInfo.first_name..'](tg://user?id='..UserId..' 〙'
+Jabwausername = '['..Jabwa.first_name..'](tg://user?id='..UserId..' 〙'
 end
 return {
-Lock     = '\n* ✧ بواسطه -› *'..UserInfousername..'\n*'..TextMsg..'\n ✧ خاصيه المسح *',
-unLock   = '\n* ✧ بواسطه -› *'..UserInfousername..'\n'..TextMsg,
-lockKtm  = '\n* ✧ بواسطه -› *'..UserInfousername..'\n*'..TextMsg..'\n ✧ خاصيه الكتم *',
-lockKid  = '\n* ✧ بواسطه -› *'..UserInfousername..'\n*'..TextMsg..'\n ✧ خاصيه التقييد *',
-lockKick = '\n* ✧ بواسطه -› *'..UserInfousername..'\n*'..TextMsg..'\n ✧ خاصيه الطرد *',
-Reply    = '\n* ✧ المستخدم -› *'..UserInfousername..'\n*'..TextMsg..'*'
+Lock     = '\n* ✧ بواسطه -› *'..Jabwausername..'\n*'..TextMsg..'\n𖥔 خاصيه المسح *',
+unLock   = '\n** ✧ بواسطه -› *'..Jabwausername..'\n'..TextMsg,
+lockKtm  = '\n** ✧ بواسطه -› *'..Jabwausername..'\n*'..TextMsg..'\n𖥔 خاصيه الكتم *',
+lockKid  = '\n* ✧ بواسطه -› *'..Jabwausername..'\n*'..TextMsg..'\n𖥔 خاصيه التقييد *',
+lockKick = '\n* ✧ بواسطه -› *'..Jabwausername..'\n*'..TextMsg..'\n𖥔 خاصيه الطرد *',
+Reply    = '\n* ✧ المستخدم -› *'..Jabwausername..'\n*'..TextMsg..'*'
 }
 end
 function StatusCanOrNotCan(ChatId,UserId)
@@ -1056,21 +1062,21 @@ return false
 end 
 if msg.content.luatele == "messageChatJoinByLink" then
 if Redis:get(Saidi.."Status:Welcome"..msg_chat_id) then
-local UserInfo = LuaTele.getUser(msg.sender.user_id)
+local Jabwa = LuaTele.getUser(msg.sender.user_id)
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Welcome = Redis:get(Saidi.."Welcome:Group"..msg_chat_id)
 if Welcome then 
-if UserInfo.username then
-UserInfousername = '@'..UserInfo.username
+if Jabwa.username then
+Jabwausername = '@'..Jabwa.username
 else
-UserInfousername = 'لا يوجد '
+Jabwausername = 'لا يوجد '
 end
-Welcome = Welcome:gsub('name',UserInfo.first_name) 
-Welcome = Welcome:gsub('user',UserInfousername) 
+Welcome = Welcome:gsub('name',Jabwa.first_name) 
+Welcome = Welcome:gsub('user',Jabwausername) 
 Welcome = Welcome:gsub('NameCh',Get_Chat.title) 
 return LuaTele.sendText(msg_chat_id,msg_id,Welcome,"md")  
 else
-return LuaTele.sendText(msg_chat_id,msg_id,' ✧ اطلق دخول ['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..' 〙\n ✧ نورت الجروب  〘 '..Get_Chat.title..' 〙',"md")  
+return LuaTele.sendText(msg_chat_id,msg_id,' ✧ اطلق دخول ['..Jabwa.first_name..'](tg://user?id='..msg.sender.user_id..' 〙\n ✧ نورت الجروب  〘 '..Get_Chat.title..' 〙',"md")  
 end
 end
 end
@@ -2064,13 +2070,13 @@ local audio = Redis:get(Saidi.."Add:Rd:Sudo:Audio"..text)
 local audioc = Redis:get(Saidi.."Add:Rd:Sudo:Audioc"..text)
 local video_note = Redis:get(Saidi.."Add:Rd:Sudo:video_note"..text)
 if Text then 
-local UserInfo = LuaTele.getUser(msg.sender.user_id)
+local Jabwa = LuaTele.getUser(msg.sender.user_id)
 local NumMsg = Redis:get(Saidi..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
 local TotalMsg = Total_message(NumMsg)
 local Status_Gps = msg.Name_Controller
 local NumMessageEdit = Redis:get(Saidi..'Num:Message:Edit'..msg_chat_id..msg.sender.user_id) or 0
-local Text = Text:gsub('#username',(UserInfo.username or 'لا يوجد')) 
-local Text = Text:gsub('#name',UserInfo.first_name)
+local Text = Text:gsub('#username',(Jabwa.username or 'لا يوجد')) 
+local Text = Text:gsub('#name',Jabwa.first_name)
 local Text = Text:gsub('#id',msg.sender.user_id)
 local Text = Text:gsub('#edit',NumMessageEdit)
 local Text = Text:gsub('#msgs',NumMsg)
@@ -2125,13 +2131,13 @@ local audio = Redis:get(Saidi.."Add:Rd:Manager:Audio"..text..msg_chat_id)
 local audioc = Redis:get(Saidi.."Add:Rd:Manager:Audioc"..text..msg_chat_id)
 local video_note = Redis:get(Saidi.."Add:Rd:Manager:video_note"..text..msg_chat_id)
 if Texingt then 
-local UserInfo = LuaTele.getUser(msg.sender.user_id)
+local Jabwa = LuaTele.getUser(msg.sender.user_id)
 local NumMsg = Redis:get(Saidi..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
 local TotalMsg = Total_message(NumMsg) 
 local Status_Gps = msg.Name_Controller
 local NumMessageEdit = Redis:get(Saidi..'Num:Message:Edit'..msg_chat_id..msg.sender.user_id) or 0
-local Texingt = Texingt:gsub('#username',(UserInfo.username or 'لا يوجد')) 
-local Texingt = Texingt:gsub('#name',UserInfo.first_name)
+local Texingt = Texingt:gsub('#username',(Jabwa.username or 'لا يوجد')) 
+local Texingt = Texingt:gsub('#name',Jabwa.first_name)
 local Texingt = Texingt:gsub('#id',msg.sender.user_id)
 local Texingt = Texingt:gsub('#edit',NumMessageEdit)
 local Texingt = Texingt:gsub('#msgs',NumMsg)
@@ -2688,9 +2694,9 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〙'..Controller_Num(2)..' 〙* ',"md",true)  
 end
 local photo = LuaTele.getUserProfilePhotos(Saidi)
-local UserInfo = LuaTele.getUser(Saidi)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
+local Jabwa = LuaTele.getUser(Saidi)
+for Name_User in string.gmatch(Jabwa.first_name, "[^%s]+" ) do
+Jabwa.first_name = Name_User
 break
 end 
 NamesBot = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
@@ -2752,9 +2758,9 @@ data = {
 }
 }
 if not msg.ControllerBot then
-local UserInfo = LuaTele.getUser(msg.sender.user_id)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
+local Jabwa = LuaTele.getUser(msg.sender.user_id)
+for Name_User in string.gmatch(Jabwa.first_name, "[^%s]+" ) do
+Jabwa.first_name = Name_User
 break
 end
 local reply_markup = LuaTele.replyMarkup{
@@ -2768,7 +2774,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n ✧ تم تفعيل مجموعه جديده \n ✧ المستخدم -›〘*['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')*〙\n ✧ معلومات المجموعه -› \n ✧ عدد الاعضاء -› '..Info_Chats.member_count..'\n ✧ عدد الادمنيه -› '..Info_Chats.administrator_count..'\n ✧ عدد المطرودين -› '..Info_Chats.Jabwaned_count..'\n ✧ عدد المقيدين -› '..Info_Chats.restricted_count..'*',"md",true, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n ✧ تم تفعيل مجموعه جديده \n ✧ المستخدم -›〘*['..Jabwa.first_name..'](tg://user?id='..msg.sender.user_id..')*〙\n ✧ معلومات المجموعه -› \n ✧ عدد الاعضاء -› '..Info_Chats.member_count..'\n ✧ عدد الادمنيه -› '..Info_Chats.administrator_count..'\n ✧ عدد المطرودين -› '..Info_Chats.Jabwaned_count..'\n ✧ عدد المقيدين -› '..Info_Chats.restricted_count..'*',"md",true, false, false, false, reply_markup)
 end
 Redis:sadd(Saidi.."ChekBotAdd",msg_chat_id)
 Redis:set(Saidi.."Status:Id"..msg_chat_id,true) ;Redis:set(Saidi.."Status:Reply"..msg_chat_id,true) ;Redis:set(Saidi.."Status:ReplySudo"..msg_chat_id,true) ;Redis:set(Saidi.."Status:JabwaId"..msg_chat_id,true) ;Redis:set(Saidi.."Status:SetId"..msg_chat_id,true) 
@@ -2799,9 +2805,9 @@ end
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ اسم المجموعه -›〘*['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')*〙\n ✧ تم التفعيل من قبل *',"md",true)  
 else
 if not msg.ControllerBot then
-local UserInfo = LuaTele.getUser(msg.sender.user_id)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
+local Jabwa = LuaTele.getUser(msg.sender.user_id)
+for Name_User in string.gmatch(Jabwa.first_name, "[^%s]+" ) do
+Jabwa.first_name = Name_User
 break
 end
 local reply_markup = LuaTele.replyMarkup{
@@ -2815,7 +2821,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n* ✧ تم تفعيل مجموعه جديده *\n* ✧ المستخدم -›〘*['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')*〙\n* ✧ معلومات المجموعه -› *\n* ✧ عدد الاعضاء -› *'..Info_Chats.member_count..'\n* ✧ عدد الادمنيه -› *'..Info_Chats.administrator_count..'\n* ✧ عدد المطرودين -› *'..Info_Chats.Jabwaned_count..'\n* ✧ عدد المقيدين -› *'..Info_Chats.restricted_count..'*',"md",true, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n* ✧ تم تفعيل مجموعه جديده *\n* ✧ المستخدم -›〘*['..Jabwa.first_name..'](tg://user?id='..msg.sender.user_id..')*〙\n* ✧ معلومات المجموعه -› *\n* ✧ عدد الاعضاء -› *'..Info_Chats.member_count..'\n* ✧ عدد الادمنيه -› *'..Info_Chats.administrator_count..'\n* ✧ عدد المطرودين -› *'..Info_Chats.Jabwaned_count..'\n* ✧ عدد المقيدين -› *'..Info_Chats.restricted_count..'*',"md",true, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -2846,9 +2852,9 @@ if not Redis:sismember(Saidi.."ChekBotAdd",msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ اسم المجموعه -›〘*['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')*〙\n ✧ تم التعطيل من قبل *',"md",true)  
 else
 if not msg.ControllerBot then
-local UserInfo = LuaTele.getUser(msg.sender.user_id)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
+local Jabwa = LuaTele.getUser(msg.sender.user_id)
+for Name_User in string.gmatch(Jabwa.first_name, "[^%s]+" ) do
+Jabwa.first_name = Name_User
 break
 end
 local reply_markup = LuaTele.replyMarkup{
@@ -2862,7 +2868,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n ✧ تم تعطيل مجموعه جديده \n ✧ المستخدم -›〘*['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')*〙\n ✧ معلومات المجموعه -› \n ✧ عدد الاعضاء -› '..Info_Chats.member_count..'\n ✧ عدد الادمنيه -› '..Info_Chats.administrator_count..'\n ✧ عدد المطرودين -› '..Info_Chats.Jabwaned_count..'\n ✧ عدد المقيدين -› '..Info_Chats.restricted_count..'*',"md",true, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n ✧ تم تعطيل مجموعه جديده \n ✧ المستخدم -›〘*['..Jabwa.first_name..'](tg://user?id='..msg.sender.user_id..')*〙\n ✧ معلومات المجموعه -› \n ✧ عدد الاعضاء -› '..Info_Chats.member_count..'\n ✧ عدد الادمنيه -› '..Info_Chats.administrator_count..'\n ✧ عدد المطرودين -› '..Info_Chats.Jabwaned_count..'\n ✧ عدد المقيدين -› '..Info_Chats.restricted_count..'*',"md",true, false, false, false, reply_markup)
 end
 Redis:srem(Saidi.."ChekBotAdd",msg_chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ اسم المجموعه -›〘*['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')*〙\n ✧ تم التعطيل من قبل *','md',true)
@@ -2886,9 +2892,9 @@ if not Redis:sismember(Saidi.."ChekBotAdd",msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ اسم المجموعه -›〘*['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')*〙\n ✧ تم التعطيل من قبل *',"md",true)  
 else
 if not msg.ControllerBot then
-local UserInfo = LuaTele.getUser(msg.sender.user_id)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
+local Jabwa = LuaTele.getUser(msg.sender.user_id)
+for Name_User in string.gmatch(Jabwa.first_name, "[^%s]+" ) do
+Jabwa.first_name = Name_User
 break
 end
 local reply_markup = LuaTele.replyMarkup{
@@ -2902,7 +2908,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n ✧ تم تعطيل مجموعه جديده \n ✧ المستخدم -›〘 *['..UserInfo.first_name..'](tg://user?id='..msg.sender.user_id..')*〙\n ✧ معلومات المجموعه -› \n ✧ عدد الاعضاء -› '..Info_Chats.member_count..'\n ✧ عدد الادمنيه -› '..Info_Chats.administrator_count..'\n ✧ عدد المطرودين -› '..Info_Chats.Jabwaned_count..'\n ✧ عدد المقيدين -› '..Info_Chats.restricted_count..'*',"md",true, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n ✧ تم تعطيل مجموعه جديده \n ✧ المستخدم -›〘 *['..Jabwa.first_name..'](tg://user?id='..msg.sender.user_id..')*〙\n ✧ معلومات المجموعه -› \n ✧ عدد الاعضاء -› '..Info_Chats.member_count..'\n ✧ عدد الادمنيه -› '..Info_Chats.administrator_count..'\n ✧ عدد المطرودين -› '..Info_Chats.Jabwaned_count..'\n ✧ عدد المقيدين -› '..Info_Chats.restricted_count..'*',"md",true, false, false, false, reply_markup)
 end
 Redis:srem(Saidi.."ChekBotAdd",msg_chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ اسم المجموعه -›〘*['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')*〙\n ✧ تم التعطيل من قبل *','md',true)
@@ -3476,11 +3482,11 @@ end
 if text and text:match("^تنزيل (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^تنزيل (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if TextMsg == 'مطور ثانوي' then
@@ -3702,14 +3708,14 @@ end
 
 if text and text:match('^تنزيل (.*) (%d+)$') then
 local UserId = {text:match('^تنزيل (.*) (%d+)$')}
-local UserInfo = LuaTele.getUser(UserId[2])
-if UserInfo.luatele == "error" and UserInfo.code == 6 then
+local Jabwa = LuaTele.getUser(UserId[2])
+if Jabwa.luatele == "error" and Jabwa.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
-if UserInfo.message == "Invalid user ID" then
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if UserId[1] == 'مطور ثانوي' then
@@ -4002,11 +4008,11 @@ end
 if text and text:match("^رفع (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^رفع (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if TextMsg == 'مطور ثانوي' then
@@ -4282,14 +4288,14 @@ end
 end
 if text and text:match('^رفع (.*) (%d+)$') then
 local UserId = {text:match('^رفع (.*) (%d+)$')}
-local UserInfo = LuaTele.getUser(UserId[2])
-if UserInfo.luatele == "error" and UserInfo.code == 6 then
+local Jabwa = LuaTele.getUser(UserId[2])
+if Jabwa.luatele == "error" and Jabwa.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
-if UserInfo.message == "Invalid user ID" then
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if UserId[1] == 'مطور ثانوي' then
@@ -4762,9 +4768,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ لا يوجد خولات حال�
 end
 ListMembers = '\n*✧ قائمه الخولات  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -4786,9 +4792,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ لا يوجد وتكات ناش�
 end
 ListMembers = '\n*✧ قائمه الوتكات  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -4810,9 +4816,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ مفيش متوحدين هنا �
 end
 ListMembers = '\n*✧ قائمه المتوحدين  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -4834,9 +4840,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ مفيش كلاب هنا ارف�
 end
 ListMembers = '\n*✧ قائمه الكلاب  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -4858,9 +4864,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ مفيش حمير هنا 😂�
 end
 ListMembers = '\n*✧ قائمه الحمير  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -4882,9 +4888,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ مفيش عرر هنا 😂😂 
 end
 ListMembers = '\n*✧ قائمه العرر  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -4906,9 +4912,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ مفيش سمباويه هنا �
 end
 ListMembers = '\n*✧ قائمه السمب  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -4930,9 +4936,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ مفيش قرود هنا يصح�
 end
 ListMembers = '\n*✧ قائمه القرود  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -4954,9 +4960,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"✧ مفيش اغبيه هنا يص�
 end
 ListMembers = '\n*✧ قائمه الاغبيه  \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
@@ -6975,11 +6981,11 @@ Creator = '〘  المالك 〙'
 else
 Creator = ""
 end
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
-if UserInfo.username ~= "" then
-listAdmin = listAdmin.."*"..k.." - @"..UserInfo.username.."* "..Creator.."\n"
+local Jabwa = LuaTele.getUser(v.member_id.user_id)
+if Jabwa.username ~= "" then
+listAdmin = listAdmin.."*"..k.." - @"..Jabwa.username.."* "..Creator.."\n"
 else
-listAdmin = listAdmin.."*"..k.." - *["..UserInfo.id.."](tg://user?id="..UserInfo.id.." 〙 "..Creator.."\n"
+listAdmin = listAdmin.."*"..k.." - *["..Jabwa.id.."](tg://user?id="..Jabwa.id.." 〙 "..Creator.."\n"
 end
 end
 LuaTele.sendText(msg_chat_id,msg_id,listAdmin,"md",true)  
@@ -7959,14 +7965,14 @@ local List_Members = Info_Members.members
 listBots = '\n* ✧ قائمه البوتات \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 x = 0
 for k, v in pairs(List_Members) do
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
+local Jabwa = LuaTele.getUser(v.member_id.user_id)
 if Info_Members.members[k].status.luatele == "chatMemberStatusAdministrator" then
 x = x + 1
 Admin = '〘  ادمن 〙'
 else
 Admin = ""
 end
-listBots = listBots.."*"..k.." - @"..UserInfo.username.."* "..Admin.."\n"
+listBots = listBots.."*"..k.." - @"..Jabwa.username.."* "..Admin.."\n"
 end
 LuaTele.sendText(msg_chat_id,msg_id,listBots.."*\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ عدد البوتات التي هي ادمن 〘 "..x.." 〙*","md",true)  
 end
@@ -8017,11 +8023,11 @@ for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.is_member == true and Info_Members.members[k].status.luatele == "chatMemberStatusRestricted" then
 y = true
 x = x + 1
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
-if UserInfo.username ~= "" then
-restricted = restricted.."*"..x.." - @"..UserInfo.username.."*\n"
+local Jabwa = LuaTele.getUser(v.member_id.user_id)
+if Jabwa.username ~= "" then
+restricted = restricted.."*"..x.." - @"..Jabwa.username.."*\n"
 else
-restricted = restricted.."*"..x.." - *["..UserInfo.id.."](tg://user?id="..UserInfo.id.." 〙 \n"
+restricted = restricted.."*"..x.." - *["..Jabwa.id.."](tg://user?id="..Jabwa.id.." 〙 \n"
 end
 end
 end
@@ -8139,14 +8145,14 @@ x = 0
 tags = 0
 local list = Info_Members.members
 for k, v in pairs(list) do
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
+local Jabwa = LuaTele.getUser(v.member_id.user_id)
 if x == 10 or x == tags or k == 0 then
 tags = x + 10
 listall = ""
 end
 x = x + 1
-if UserInfo.first_name ~= '' then
-listall = listall.." ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id.."),"
+if Jabwa.first_name ~= '' then
+listall = listall.." ["..Jabwa.first_name.."](tg://user?id="..Jabwa.id.."),"
 end
 if x == 10 or x == tags or k == 0 then
 LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)  
@@ -10407,11 +10413,11 @@ if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هذا الامر يخص  〘 '..Controller_Num(7)..' 〙* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if Redis:sismember(Saidi.."DevelopersQ:Groups",Message_Reply.sender.user_id) then
@@ -10717,11 +10723,11 @@ if GetInfoBot(msg).SetAdmin == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 local SetCustomTitle = https.request("https://api.telegram.org/bot"..Token.."/setChatAdministratorCustomTitle?chat_id="..msg_chat_id.."&user_id="..Message_Reply.sender.user_id.."&custom_title="..CustomTitle)
@@ -10789,11 +10795,11 @@ if GetInfoBot(msg).SetAdmin == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'administrator',{1 ,1, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, ''})
@@ -10865,11 +10871,11 @@ if GetInfoBot(msg).SetAdmin == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'administrator',{0 ,0, 0, 0, 0, 0, 0 ,0, 0})
@@ -10925,11 +10931,11 @@ elseif text == 'مسح جهاتي' then
 Redis:del(Saidi..'Num:Add:Memp'..msg.chat_id..':'..msg.sender.user_id)
 LuaTele.sendText(msg_chat_id,msg_id,' ✧ تم مسح جميع جهاتك المضافه ',"md",true)  
 elseif text == 'رسائلي' then
-LuaTele.sendText(msg_chat_id,msg_id,' ✧ عدد رسائلك هنا *~ '..(Redis:get(Saidi..'Num:Message:User'..msg.chat_id..':'..msg.sender.user_id) or 1)..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,'* ✧ عدد رسائلك هنا ⇦ '..(Redis:get(Saidi..'Num:Message:User'..msg.chat_id..':'..msg.sender.user_id) or 1)..'*',"md",true)  
 elseif text == 'سحكاتي' or text == 'تعديلاتي' then
-LuaTele.sendText(msg_chat_id,msg_id,' ✧ عدد التعديلات هنا *~ '..(Redis:get(Saidi..'Num:Message:Edit'..msg.chat_id..msg.sender.user_id) or 0)..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,'* ✧ عدد التعديلات هنا ⇦ '..(Redis:get(Saidi..'Num:Message:Edit'..msg.chat_id..msg.sender.user_id) or 0)..'*',"md",true)  
 elseif text == 'جهاتي' then
-LuaTele.sendText(msg_chat_id,msg_id,' ✧ عدد جهاتك المضافه هنا *~ '..(Redis:get(Saidi.."Num:Add:Memp"..msg.chat_id..":"..msg.sender.user_id) or 0)..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,'* ✧ عدد جهاتك يبشا ⇦ '..(Redis:get(Saidi.."Num:Add:Memp"..msg.chat_id..":"..msg.sender.user_id) or 0)..'*',"md",true)  
 elseif text == 'مسح' and msg.reply_to_message_id ~= 0 and msg.Addictive then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
@@ -11288,8 +11294,8 @@ local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
 local List_Members = Info_Members.members
 x = 0
 for k, v in pairs(List_Members) do
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
-if UserInfo.type.luatele == "userTypeDeleted" then
+local Jabwa = LuaTele.getUser(v.member_id.user_id)
+if Jabwa.type.luatele == "userTypeDeleted" then
 local userTypeDeleted = LuaTele.setChatMemberStatus(msg.chat_id,v.member_id.user_id,'Jabwaned',0)
 if userTypeDeleted.luatele == "ok" then
 x = x + 1
@@ -11499,18 +11505,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(Saidi.."Send:Bc:Grops" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/Noooo'},
-},
-}
-}
 LuaTele.sendText(msg_chat_id,msg_id,[[*
 ✧ ارسل اذاعتك لنشرها في الجروبات 
  ✧ للخروج من الامر ارسل 〘الغاء〙
-*]],"md",true, false, false, false, reply_markup)
+*]],"md",true)  
 return false
 end
 if text=="اذاعه خاص" then 
@@ -11563,11 +11561,11 @@ return false
 end
 if text == 'كشف القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if not msg.Addictive then
@@ -11650,11 +11648,11 @@ LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ معلومات الكشف \n⩹┉�
 end
 if text == 'رفع القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if not msg.Addictive then
@@ -12991,11 +12989,11 @@ if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(7)..' 〙* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 Redis:incrby(Saidi.."Num:Add:Games"..msg.chat_id..Message_Reply.sender.user_id, text:match("^اضف مجوهرات (%d+)$"))  
@@ -13010,11 +13008,11 @@ if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(7)..' 〙* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
+local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+if Jabwa and Jabwa.type and Jabwa.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 Redis:incrby(Saidi.."Num:Message:User"..msg.chat_id..":"..Message_Reply.sender.user_id, text:match("^اضف رسائل (%d+)$"))  
@@ -14002,10 +14000,10 @@ return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ لا يوجد محظورين �
 end
 ListMembers = '\n* ✧ قائمه المحظورين عام  \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
+local Jabwa = LuaTele.getUser(v)
 var(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v.." 〙\n"
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v.." 〙\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v.." 〙\n"
 end
@@ -14029,9 +14027,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ لا يوجد مطورين ف�
 end
 ListMembers = '\n* ✧ قائمه مطورين البوت \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v.." 〙\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v.." 〙\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v.." 〙\n"
 end
@@ -14055,9 +14053,9 @@ return LuaTele.sendText(msg_chat_id,msg_id," ✧ لا يوجد مطورين في
 end
 ListMembers = '\n* ✧ قائمه مطورين البوت \n ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺*\n'
 for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v.." 〙\n"
+local Jabwa = LuaTele.getUser(v)
+if Jabwa and Jabwa.username and Jabwa.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..Jabwa.username.."](tg://user?id="..v.." 〙\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v.." 〙\n"
 end
