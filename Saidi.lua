@@ -11792,6 +11792,7 @@ data = {
 return LuaTele.sendText(msg_chat_id,msg_id,'*⋆ مرحبا بك في قائمه روايات ⋆*',"md",false, false, false, false, reply_markup)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
+local NamesBot = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
