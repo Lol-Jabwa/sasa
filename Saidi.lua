@@ -11983,7 +11983,7 @@ keyboard.inline_keyboard = {
 {text = sudo_name, url = 'tg://user?id='..sudo_id},
 },
 {
-{text = 'اضف بوت '..Name:Bot..' لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف بوت '..NamesBot..' لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
