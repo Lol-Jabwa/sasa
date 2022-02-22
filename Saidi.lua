@@ -11781,7 +11781,7 @@ keyboard.inline_keyboard = {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
-{text = ' اضف بوت'..Mostafa..' لمجموعتك ', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = ' اضف بوت '..Mostafa..' لمجموعتك ', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -13571,7 +13571,7 @@ keyboard.inline_keyboard = {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
-{text = ' اضف بوت'..Mostafa..' لمجموعتك ', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = ' اضف بوت '..Mostafa..' لمجموعتك ', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
