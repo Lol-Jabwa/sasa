@@ -116,29 +116,6 @@ end
 end
 return Chat_Type
 end
-function s_api(web) 
-local info, res = https.request(web) 
-local req = json:decode(info) 
-if res ~= 200 then 
-return false 
-end 
-if not req.ok then 
-return false end 
-return req 
-end 
-function sendText(chat_id, text, reply_to_message_id, markdown) 
-send_api = "https://api.telegram.org/bot"..Token 
-local url = send_api.."/sendMessage?chat_id=" .. chat_id .. "&text=" .. URL.escape(text) 
-if reply_to_message_id ~= 0 then 
-url = url .. "&reply_to_message_id=" .. reply_to_message_id 
-end 
-if markdown == "md" or markdown == "markdown" then 
-url = url.."&parse_mode=Markdown" 
-elseif markdown == "html" then 
-url = url.."&parse_mode=HTML" 
-end 
-return s_api(url) 
-end
 function getbio(User)
 local var = "لايوجد"
 local url , res = https.request("https://api.telegram.org/bot"..Token.."/getchat?chat_id="..User);
@@ -148,7 +125,6 @@ var = data.result.bio
 end
 return var
 end
-
 function getcustom(msg,scc)
 local var = "لايوجد"
 Ge = https.request("https://api.telegram.org/bot"..Token.."/getChatMember?chat_id=" .. msg_chat_id .. "&user_id=" ..scc.sender_user_id_)
@@ -626,7 +602,6 @@ MsgText = 'امبروطور التفاعل 👍'
 end 
 return MsgText 
 end
-
 function Getpermissions(ChatId)
 local Get_Chat = LuaTele.getChat(ChatId)
 if Get_Chat.permissions.can_add_web_page_previews then
@@ -653,7 +628,6 @@ end
 if Get_Chat.permissions.can_send_polls then
 polls = true else polls = false
 end
-
 return{
 web = web,
 info = info,
@@ -16923,7 +16897,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الروابط", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الروابط*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_spam') then
 local UserId = Text:match('(%d+)/Status_spam')
@@ -16943,7 +16917,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الكلايش", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الكلايش*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_keypord') then
 local UserId = Text:match('(%d+)/Status_keypord')
@@ -16963,7 +16937,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الكيبورد", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الكيبورد*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_voice') then
 local UserId = Text:match('(%d+)/Status_voice')
@@ -16983,7 +16957,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الاغاني", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الاغاني*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_gif') then
 local UserId = Text:match('(%d+)/Status_gif')
@@ -17003,7 +16977,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر المتحركات", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر المتحركات*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_files') then
 local UserId = Text:match('(%d+)/Status_files')
@@ -17023,7 +16997,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الملفات", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الملفات*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_text') then
 local UserId = Text:match('(%d+)/Status_text')
@@ -17040,7 +17014,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الدردشه", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الدردشه*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_video') then
 local UserId = Text:match('(%d+)/Status_video')
@@ -17060,7 +17034,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الفيديو", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الفيديو*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_photo') then
 local UserId = Text:match('(%d+)/Status_photo')
@@ -17080,7 +17054,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الصور", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الصور*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_username') then
 local UserId = Text:match('(%d+)/Status_username')
@@ -17100,7 +17074,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر المعرفات", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر المعرفات*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_tags') then
 local UserId = Text:match('(%d+)/Status_tags')
@@ -17120,7 +17094,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر التاك", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر التاك*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_bots') then
 local UserId = Text:match('(%d+)/Status_bots')
@@ -17137,7 +17111,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر البوتات", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر البوتات*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_fwd') then
 local UserId = Text:match('(%d+)/Status_fwd')
@@ -17157,7 +17131,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر التوجيه", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر التوجيه*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_audio') then
 local UserId = Text:match('(%d+)/Status_audio')
@@ -17177,7 +17151,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الصوت", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الصوت*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_stikear') then
 local UserId = Text:match('(%d+)/Status_stikear')
@@ -17197,7 +17171,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الملصقات", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الملصقات*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_phone') then
 local UserId = Text:match('(%d+)/Status_phone')
@@ -17217,7 +17191,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الجهات", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الجهات*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_joine') then
 local UserId = Text:match('(%d+)/Status_joine')
@@ -17234,7 +17208,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الدخول", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الدخول*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_addmem') then
 local UserId = Text:match('(%d+)/Status_addmem')
@@ -17251,7 +17225,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الاضافه", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الاضافه*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_videonote') then
 local UserId = Text:match('(%d+)/Status_videonote')
@@ -17271,7 +17245,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر بصمه الفيديو", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر بصمه الفيديو*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_pin') then
 local UserId = Text:match('(%d+)/Status_pin')
@@ -17288,7 +17262,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر التثبيت", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر التثبيت*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_tgservir') then
 local UserId = Text:match('(%d+)/Status_tgservir')
@@ -17305,7 +17279,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الاشعارات", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الاشعارات*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_markdaun') then
 local UserId = Text:match('(%d+)/Status_markdaun')
@@ -17325,7 +17299,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الماركدون", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الماركدون*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_edits') then
 local UserId = Text:match('(%d+)/Status_edits')
@@ -17342,7 +17316,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر التعديل", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر التعديل*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_games') then
 local UserId = Text:match('(%d+)/Status_games')
@@ -17362,7 +17336,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر الالعاب", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر الالعاب*", 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/Status_flood') then
 local UserId = Text:match('(%d+)/Status_flood')
@@ -17383,7 +17357,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 },
 }
 }
-LuaTele.editMessageText(ChatId,Msg_id," ✧ عليك اختيار نوع القفل او الفتح على امر التكرار", 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ عليك اختيار نوع القفل او الفتح على امر التكرار*", 'md', true, false, reply_markup)
 end
 
 
@@ -17568,74 +17542,74 @@ if Text and Text:match('(%d+)/Developers') then
 local UserId = Text:match('(%d+)/Developers')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."Developers:Groups") 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح مطورين البوت", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح مطورين البوت*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/DevelopersQ') then
 local UserId = Text:match('(%d+)/DevelopersQ')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."DevelopersQ:Groups") 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح مطورين الثانوين من البوت", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح مطورين الثانوين من البوت*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/TheBasics') then
 local UserId = Text:match('(%d+)/TheBasics')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."TheBasics:Group"..ChatId) 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح المنشئين الاساسيين", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح المنشئين الاساسيين*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/TheBasicsQ') then
 local UserId = Text:match('(%d+)/TheBasicsQ')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."TheBasicsQ:Group"..ChatId) 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح المالكين", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح المالكين*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/Originators') then
 local UserId = Text:match('(%d+)/Originators')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."Originators:Group"..ChatId) 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح منشئين الجروب", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح منشئين الجروب*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/Managers') then
 local UserId = Text:match('(%d+)/Managers')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."Managers:Group"..ChatId) 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح المدراء", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح المدراء*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/Addictive') then
 local UserId = Text:match('(%d+)/Addictive')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."Addictive:Group"..ChatId) 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح ادمنيه الجروب", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح ادمنيه الجروب*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/DelDistinguished') then
 local UserId = Text:match('(%d+)/DelDistinguished')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."Distinguished:Group"..ChatId) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'NoNextSeting'},},}}
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح المميزين", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح المميزين*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/JabwaAll') then
 local UserId = Text:match('(%d+)/JabwaAll')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."JabwaAll:Groups") 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح المحظورين عام", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح المحظورين عام*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/ktmAll') then
 local UserId = Text:match('(%d+)/ktmAll')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."ktmAll:Groups") 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح المكتومين عام", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح المكتومين عام*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/JabwaGroup') then
 local UserId = Text:match('(%d+)/JabwaGroup')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."JabwaGroup:Group"..ChatId) 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح المحظورين", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح المحظورين*", 'md', false)
 end
 elseif Text and Text:match('(%d+)/SilentGroupGroup') then
 local UserId = Text:match('(%d+)/SilentGroupGroup')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Saidi.."SilentGroup:Group"..ChatId) 
-LuaTele.editMessageText(ChatId,Msg_id," ✧ تم مسح المكتومين", 'md', false)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧ تم مسح المكتومين*", 'md', false)
 end
 end
 
