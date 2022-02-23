@@ -15677,7 +15677,20 @@ LuaTele.editMessageText(ChatId,Msg_id,"* ✧ ارسل رساله المساعد�
 Redis:set(Saidi.."rank_tf"..IdUser,"rank_tk") 
 end
 end 
-
+if Text and Text:match('(%d+)/Namebot') then
+local UserId = Text:match('(%d+)/Namebot')
+if tonumber(IdUser) == tonumber(UserId) then
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧  ارسل لي الاسم الان*","md",true) 
+Redis:set(Saidi.."Change:Name:Bot"..ChatId,300,true)
+end
+end
+if Text and Text:match('(%d+)/Namebot') then
+local UserId = Text:match('(%d+)/Namebot')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(Saidi.."Change:Name:Bot"..ChatId,300,true)
+LuaTele.editMessageText(ChatId,Msg_id,"* ✧  ارسل لي الاسم الان*","md",true) 
+end
+end
 if Text and Text:match('(%d+)/yaaaaa') then
 local UserId = Text:match('(%d+)/yaaaaa')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -15685,7 +15698,38 @@ LuaTele.editMessageText(ChatId,Msg_id,"* ✧ ارسل معرف المطور ال
 Redis:set(Saidi.."AddSudosNew"..ChatId,true)
 end
 end
-
+if Text and Text:match('(%d+)/Namebot') then
+local UserId = Text:match('(%d+)/Namebot')
+if tonumber(IdUser) == tonumber(UserId) then
+LuaTele.editMessageText(ChatId,Msg_id," ✧  تم تغير اسم البوت الى - "..text,"md",true) 
+Redis:del(Saidi.."Change:Name:Bot"..msg.sender.user_id) 
+Redis:set(Saidi.."Name:Bot",text) 
+end
+end
+if Text and Text:match('(%d+)/Namebot') then
+local UserId = Text:match('(%d+)/Namebot')
+if tonumber(IdUser) == tonumber(UserId) then
+LuaTele.editMessageText(ChatId,Msg_id," ✧  تم تغير اسم البوت الى - "..text,"md",true) 
+Redis:set(Saidi.."Change:Name:Bot"..msg.sender.user_id) 
+Redis:set(Saidi.."Name:Bot",text) 
+end
+end
+if Text and Text:match('(%d+)/Namebot') then
+local UserId = Text:match('(%d+)/Namebot')
+if tonumber(IdUser) == tonumber(UserId) then
+LuaTele.editMessageText(ChatId,Msg_id," ✧  تم تغير اسم البوت الى - "..text,"md",true) 
+Redis:del(Saidi.."Change:Name:Bot"..ChatId,true)
+Redis:set(Saidi.."Name:Bot",text) 
+end
+end
+if Text and Text:match('(%d+)/Namebot') then
+local UserId = Text:match('(%d+)/Namebot')
+if tonumber(IdUser) == tonumber(UserId) then
+LuaTele.editMessageText(ChatId,Msg_id," ✧  تم تغير اسم البوت الى - "..text,"md",true) 
+Redis:set(Saidi.."Change:Name:Bot"..ChatId,true)
+Redis:set(Saidi.."Name:Bot",text) 
+end
+end
 
 
 
