@@ -1,17 +1,7 @@
 #!/bin/bash
 cd $(cd $(dirname $0); pwd)
 echo -e '\e[1m\e[31m
- ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
-▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌▐░░░░░░░░░░░▌
-▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▀▀▀▀█░█▀▀▀▀ 
-▐░▌          ▐░▌       ▐░▌     ▐░▌     ▐░▌       ▐░▌    ▐░▌     
-▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░▌       ▐░▌    ▐░▌     
-▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░▌       ▐░▌    ▐░▌     
- ▀▀▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌     ▐░▌     ▐░▌       ▐░▌    ▐░▌     
-          ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░▌       ▐░▌    ▐░▌     
- ▄▄▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌ ▄▄▄▄█░█▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▄▄▄▄█░█▄▄▄▄ 
-▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌▐░░░░░░░░░░░▌
- ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ 
+4paE4paE4paE4paE4paE4paE4paE4paE4paE4paE4paEICDiloTiloTiloTiloTiloTiloTiloTiloTiloTiloTiloQgIOKWhOKWhOKWhOKWhOKWhOKWhOKWhOKWhOKWhOKWhOKWhCAg4paE4paE4paE4paE4paE4paE4paE4paE4paE4paEICDiloTiloTiloTiloTiloTiloTiloTiloTiloTiloTiloQgLArilpDilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilozilpDilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilozilpDilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilozilpDilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilozilpDilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilowK4paQ4paR4paI4paA4paA4paA4paA4paA4paA4paA4paA4paAIOKWkOKWkeKWiOKWgOKWgOKWgOKWgOKWgOKWgOKWgOKWiOKWkeKWjCDiloDiloDiloDiloDilojilpHilojiloDiloDiloDiloAg4paQ4paR4paI4paA4paA4paA4paA4paA4paA4paA4paI4paR4paM4paA4paA4paA4paA4paI4paR4paI4paA4paA4paA4paAIArilpDilpHilowgICAgICAgICAg4paQ4paR4paMICAgICAgIOKWkOKWkeKWjCAgICAg4paQ4paR4paMICAgICDilpDilpHilowgICAgICAg4paQ4paR4paMICAgIOKWkOKWkeKWjCAgICAgCuKWkOKWkeKWiOKWhOKWhOKWhOKWhOKWhOKWhOKWhOKWhOKWhCDilpDilpHilojiloTiloTiloTiloTiloTiloTiloTilojilpHilowgICAgIOKWkOKWkeKWjCAgICAg4paQ4paR4paMICAgICAgIOKWkOKWkeKWjCAgICDilpDilpHilowgICAgIArilpDilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilozilpDilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilowgICAgIOKWkOKWkeKWjCAgICAg4paQ4paR4paMICAgICAgIOKWkOKWkeKWjCAgICDilpDilpHilowgICAgIAog4paA4paA4paA4paA4paA4paA4paA4paA4paA4paI4paR4paM4paQ4paR4paI4paA4paA4paA4paA4paA4paA4paA4paI4paR4paMICAgICDilpDilpHilowgICAgIOKWkOKWkeKWjCAgICAgICDilpDilpHilowgICAg4paQ4paR4paMICAgICAKICAgICAgICAgIOKWkOKWkeKWjOKWkOKWkeKWjCAgICAgICDilpDilpHilowgICAgIOKWkOKWkeKWjCAgICAg4paQ4paR4paMICAgICAgIOKWkOKWkeKWjCAgICDilpDilpHilowgICAgIAog4paE4paE4paE4paE4paE4paE4paE4paE4paE4paI4paR4paM4paQ4paR4paMICAgICAgIOKWkOKWkeKWjCDiloTiloTiloTiloTilojilpHilojiloTiloTiloTiloQg4paQ4paR4paI4paE4paE4paE4paE4paE4paE4paE4paI4paR4paM4paE4paE4paE4paE4paI4paR4paI4paE4paE4paE4paEIArilpDilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilpHilozilpDilpHilowgICAgICAg4paQ4paR4paM4paQ4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paM4paQ4paR4paR4paR4paR4paR4paR4paR4paR4paR4paR4paM4paQ4paR4paR4paR4paR4paR4paR4paR4paR
 \033[0m'
 echo -e '\033[0;33m
 If it is the first time to install the source, send the number ⟨1⟩
