@@ -6467,6 +6467,7 @@ end
 if text == 'المطور جابوا' or text == 'جابوا' or text == 'مبرمج السورس' then  
 local UserId_Info = LuaTele.searchPublicChat("JABWA")
 if UserId_Info.id then
+local bains = LuaTele.getUser(msg.sender.user_id)
 local  Jabwa = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
 if  bain.bio then
@@ -6480,7 +6481,7 @@ local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍ�
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = bain, url = "https://t.me/"..Sudo_Id.result.username..""},
+{text = bain, url = "https://t.me/"..bains.username..""},
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -6490,7 +6491,7 @@ local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍ�
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = bain, url = "https://t.me/"..Sudo_Id.result.username..""},
+{text = bain, url = "https://t.me/"..bains.username..""},
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -10155,26 +10156,26 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ عذرا البوت ليس �
 end
 local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,Message_Reply.sender.user_id).status
 if GetMemberStatus.luatele == "chatMemberStatusRestricted" then
-Restricted = 'مقيد'
+Restricted = '✧ مقيد'
 else
-Restricted = 'غير مقيد'
+Restricted = '✧ غير مقيد'
 end
 if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).JabwaAll == true then
-JabwaAll = 'محظور عام'
+JabwaAll = '✧ محظور عام'
 else
-JabwaAll = 'غير محظور عام'
+JabwaAll = '✧ غير محظور عام'
 end
 if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).JabwaGroup == true then
-JabwaGroup = 'محظور'
+JabwaGroup = '✧ محظور'
 else
-JabwaGroup = 'غير محظور'
+JabwaGroup = '✧ غير محظور'
 end
 if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).SilentGroup == true then
-SilentGroup = 'مكتوم'
+SilentGroup = '✧ مكتوم'
 else
-SilentGroup = 'غير مكتوم'
+SilentGroup = '✧ غير مكتوم'
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ معلومات الكشف \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺"..'\n ✧ الحظر العام : '..JabwaAll..'\n ✧ الحظر : '..JabwaGroup..'\n ✧ الكتم : '..SilentGroup..'\n ✧ التقييد : '..Restricted..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ معلومات الكشف \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺"..'\n ✧ الحظر العام -› '..JabwaAll..'\n ✧ الحظر -› '..JabwaGroup..'\n ✧ الكتم -› '..SilentGroup..'\n ✧ التقييد -› '..Restricted..'*',"md",true)  
 end
 if text and text:match('^كشف القيود @(%S+)$') then
 local UserName = text:match('^كشف القيود @(%S+)$')
@@ -10200,26 +10201,26 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع ا
 end
 local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,UserId_Info.id).status
 if GetMemberStatus.luatele == "chatMemberStatusRestricted" then
-Restricted = 'مقيد'
+Restricted = '✧ مقيد'
 else
-Restricted = 'غير مقيد'
+Restricted = '✧ غير مقيد'
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).JabwaAll == true then
-JabwaAll = 'محظور عام'
+JabwaAll = '✧ محظور عام'
 else
-JabwaAll = 'غير محظور عام'
+JabwaAll = '✧ غير محظور عام'
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).JabwaGroup == true then
-JabwaGroup = 'محظور'
+JabwaGroup = '✧ محظور'
 else
-JabwaGroup = 'غير محظور'
+JabwaGroup = '✧ غير محظور'
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).SilentGroup == true then
-SilentGroup = 'مكتوم'
+SilentGroup = '✧ مكتوم'
 else
-SilentGroup = 'غير مكتوم'
+SilentGroup = '✧ غير مكتوم'
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ معلومات الكشف \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺"..'\n ✧ الحظر العام : '..JabwaAll..'\n ✧ الحظر : '..JabwaGroup..'\n ✧ الكتم : '..SilentGroup..'\n ✧ التقييد : '..Restricted..'*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ معلومات الكشف \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺"..'\n ✧ الحظر العام -› '..JabwaAll..'\n ✧ الحظر -› '..JabwaGroup..'\n ✧ الكتم -› '..SilentGroup..'\n ✧ التقييد -› '..Restricted..'*',"md",true)  
 end
 if text == 'رفع القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -10242,30 +10243,30 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ عذرا البوت ليس �
 end
 local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,Message_Reply.sender.user_id).status
 if GetMemberStatus.luatele == "chatMemberStatusRestricted" then
-Restricted = 'مقيد'
+Restricted = '✧ مقيد'
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1})
 else
 Restricted = ''
 end
 if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).JabwaAll == true and msg.ControllerBot then
-JabwaAll = 'محظور عام ,'
+JabwaAll = '✧ محظور عام'
 Redis:srem(Saidi.."Jabwa:Groups",Message_Reply.sender.user_id) 
 else
 JabwaAll = ''
 end
 if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).JabwaGroup == true then
-JabwaGroup = 'محظور ,'
+JabwaGroup = '✧ محظور'
 Redis:srem(Saidi.."Jabwa:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 else
 JabwaGroup = ''
 end
 if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).SilentGroup == true then
-SilentGroup = 'مكتوم ,'
+SilentGroup = '✧ مكتوم'
 Redis:srem(Saidi.."SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 else
 SilentGroup = ''
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ تم رفع القيود عنه : 〘 "..JabwaAll..JabwaGroup..SilentGroup..Restricted..'}*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ تم رفع القيود عنه -› 〘 "..JabwaAll..JabwaGroup..SilentGroup..Restricted..' 〙*',"md",true)  
 end
 if text and text:match('^رفع القيود @(%S+)$') then
 local UserName = text:match('^رفع القيود @(%S+)$')
@@ -10291,30 +10292,30 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n ✧ عذرا لا تستطيع ا
 end
 local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,UserId_Info.id).status
 if GetMemberStatus.luatele == "chatMemberStatusRestricted" then
-Restricted = 'مقيد'
+Restricted = '✧ مقيد'
 LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'restricted',{1,1,1,1,1,1,1,1})
 else
 Restricted = ''
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).JabwaAll == true and msg.ControllerBot then
-JabwaAll = 'محظور عام ,'
+JabwaAll = '✧ محظور عام'
 Redis:srem(Saidi.."Jabwa:Groups",UserId_Info.id) 
 else
 JabwaAll = ''
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).JabwaGroup == true then
-JabwaGroup = 'محظور ,'
+JabwaGroup = '✧ محظور'
 Redis:srem(Saidi.."Jabwa:Group"..msg_chat_id,UserId_Info.id) 
 else
 JabwaGroup = ''
 end
 if Statusrestricted(msg_chat_id,UserId_Info.id).SilentGroup == true then
-SilentGroup = 'مكتوم ,'
+SilentGroup = '✧ مكتوم'
 Redis:srem(Saidi.."SilentGroup:Group"..msg_chat_id,UserId_Info.id) 
 else
 SilentGroup = ''
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ تم رفع القيود عنه : 〘 "..JabwaAll..JabwaGroup..SilentGroup..Restricted..'}*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ تم رفع القيود عنه -› 〘 "..JabwaAll..JabwaGroup..SilentGroup..Restricted..' 〙*',"md",true)  
 end
 
 if text == 'وضع كليشه المطور' then
@@ -10356,28 +10357,6 @@ data.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(rdbhoto).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
-end
-end
-if text == 'المطور' or text == 'مطور' then
-local TextingDevSaidi = Redis:get(Saidi..'Texting:DevSaidi')
-if TextingDevSaidi then 
-return LuaTele.sendText(msg_chat_id,msg_id,TextingDevSaidi,"md",true)  
-else
-local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
-if photo.total_count > 0 then
-local Jabwa = LuaTele.getUser(Sudo_Id)
-local T = '*🤍 ▸ 𝑫𝑬𝑽 𝑩𝑶𝑻 -› *['..Jabwa.first_name..'](tg://user?id='..Jabwa.id..')*\n*'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = Jabwa.first_name, url = "https://t.me/"..Jabwa.username..""}
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-else
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ◉ مطور البوت : {*['..Jabwa.first_name..'](tg://user?id='..Jabwa.id..')*}*',"md",true)  
-end
 end
 end
 if text == "صورتي" then
