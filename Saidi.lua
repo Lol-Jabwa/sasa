@@ -10209,20 +10209,6 @@ local t = "*اليك استوري عشوائي من البوت 🖇️🌚*"
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text== "معلومات الجروب" then  
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(7)..' 〙* ',"md",true)  
-end
-if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ عذرا البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
-end
-local Get_Chat = LuaTele.getChat(msg_chat_id)
-local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
-local Chat = ' ✧ عدد الادمنيه » '..Info_Chats.administrator_count..
-'\n\n ✧ عدد المطرودين » '..Info_Chats.Jabwaned_count..
-'\n\n ✧ عدد الاعضاء » '..Info_Chats.member_count..
-return LuaTele.sendText(msg_chat_id, msg_id, Chat, 'md', false, false, false, false, reply_markup)
-end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local Mostafa = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
 local user_info = LuaTele.getUser(msg.sender.user_id)
