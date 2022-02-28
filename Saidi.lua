@@ -10221,7 +10221,6 @@ local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
 local Chat = ' ✧ عدد الادمنيه » '..Info_Chats.administrator_count..
 '\n\n ✧ عدد المطرودين » '..Info_Chats.Jabwaned_count..
 '\n\n ✧ عدد الاعضاء » '..Info_Chats.member_count..
-'\n\n ✧  اسم الجروب » ['..Get_Chat.title..']'
 return LuaTele.sendText(msg_chat_id, msg_id, Chat, 'md', false, false, false, false, reply_markup)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
