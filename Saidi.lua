@@ -2440,7 +2440,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Groups = Redis:smembers(Saidi..'ChekBotAdd')  
-local UsersBot = Redis:smembers(Saidi..'Num:User:Pv)  
+local UsersBot = Redis:smembers(Saidi..'Num:User:Pv')  
 local Get_Json = '{"BotId": '..Saidi..','  
 if #UsersBot ~= 0 then 
 Get_Json = Get_Json..'"UsersBot":['  
