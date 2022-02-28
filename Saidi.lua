@@ -2240,12 +2240,12 @@ else
 LuaTele.sendText(msg_chat_id,msg_id,' ✧  المعرف خطأ او البوت ليس مشرف في القناه ',"md",true)  
 end
 end
-if text == 'رفع النسخه العامه' and msg.reply_to_message_id ~= 0 or text == 'رفع النسخه العامه' and msg.reply_to_message_id ~= 0 then
+if text == 'رفع النسخه العامه' and msg.reply_to_message_id ~= 0 or text == 'رفع النسخه الاحتياطيه' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -2262,11 +2262,11 @@ local FilesJson = JSON.decode(Get_Info)
 if tonumber(Saidi) ~= tonumber(FilesJson.BotId) then
 return LuaTele.sendText(msg_chat_id,msg_id,' ✧ عذرا هاذا الملف غير مطابق مع البوت يرجى جلب النسخه الحقيقيه')
 end -- end botid
-LuaTele.sendText(msg_chat_id,msg_id,' ✧ جاري استرجاع المشتركين والكروبات ...')
+LuaTele.sendText(msg_chat_id,msg_id,' ✧ جاري استرجاع المشتركين والجروبات ...')
 Y = 0
 for k,v in pairs(FilesJson.UsersBot) do
 Y = Y + 1
-Redis:sadd(Saidi..'Saidi:',v)  
+Redis:sadd(Saidi..'Num:User:Pv',v)  
 end
 X = 0
 for GroupId,ListGroup in pairs(FilesJson.GroupsBot) do
@@ -2298,12 +2298,12 @@ Redis:sadd(Saidi.."Distinguished:Group"..GroupId,v)
 end
 end 
 end
-return LuaTele.sendText(msg_chat_id,msg_id,' ✧ تم استرجاع {'..X..'} مجموعه \n ✧ واسترجاع {'..Y..'} مشترك في البوت')
+return LuaTele.sendText(msg_chat_id,msg_id,' ✧ تم استرجاع  〘 '..X..' 〙 مجموعه \n ✧ واسترجاع  〘 '..Y..' 〙 مشترك في البوت')
 end
 end
 if text == 'رفع نسخه صعيدي' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.content.document then
@@ -2336,7 +2336,7 @@ for k,idASAS in pairs(v.ASAS) do
 Redis:sadd(Saidi.."TheBasics:Group"..idg,idASAS)
 end;end
 end
-return LuaTele.sendText(msg_chat_id,msg_id,' ✧ تم استرجاع المجموعات من نسخه تشاكي')
+return LuaTele.sendText(msg_chat_id,msg_id,' ✧ تم استرجاع المجموعات من نسخه صعيدي')
 else
 return LuaTele.sendText(msg_chat_id,msg_id,' ✧ الملف لا يدعم هاذا البوت')
 end
@@ -2433,10 +2433,10 @@ return LuaTele.sendText(msg_chat_id,msg_id," ✧ ارسل معرف المطور 
 end
 if text == '〘 جلب النسخه العامه 〙' or text == 'جلب النسخه العامه' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Groups = Redis:smembers(Saidi..'ChekBotAdd')  
@@ -11244,7 +11244,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'*جتك اوهه م سامع ولا ايي 😹👻*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*جتك اوهه م سامع ولا ايي ??👻*',"md",false, false, false, false, reply_markup)
 end
 if text == 'طيب' or text == 'تيب' then
 if not Redis:get(Saidi.."Sasa:Jeka"..msg_chat_id) then
@@ -13376,7 +13376,7 @@ if NumMahibes == 1 then
 Mahibes1 = '🤚' else Mahibes1 = '👊'
 end
 if NumMahibes == 2 then
-Mahibes2 = '🤚' else Mahibes2 = '👊'
+Mahibes2 = '🤚' else Mahibes2 = '??'
 end
 if NumMahibes == 3 then
 Mahibes3 = '🤚' else Mahibes3 = '👊' 
