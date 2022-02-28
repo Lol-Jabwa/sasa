@@ -9923,163 +9923,6 @@ Maghrib = pray_times['Maghrib']
 Isha = pray_times['Isha']
 return LuaTele.sendText(msg_chat_id,msg_id, "* ✧ مواقيت الصلاه *\n*▱▰▱▰▱▰▱▰▱▰▱▰▱▰*\n".."* الفجر -› *"..Fajr.."\n* الظهر -› *"..Dhuhr.."\n* العصر -› *"..Asr.."\n* المغرب -› *"..Maghrib.."\n* العشاء -› *"..Isha.."\n*▱▰▱▰▱▰▱▰▱▰▱▰▱▰*\n* حسب التوقيت المحلي لمدينه القاهره*","md",true)
 end
-
-time = os.date("*t")
-hour = time.hour
-min = time.min
-sec = time.sec
-local_time = hour..":"..min
-list_zkr = Redis:smembers(Saidi.."ChekBotAdd")
-
-if local_time then
-if local_time == "0:0" and not Redis:get(Saidi.."0:done") then -- الساعه 12 منتصف الليل 
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."0:done", true)
-for i = 1 , 23 ,1 do 
-Redis:del(Saidi..i..":done")
-end
-end
-if local_time == "1:0" and not Redis:get(Saidi.."1:done") then -- الساعه 1 بعد منتصف الليل
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."1:done", true)
-end
-if local_time == "2:0" and not Redis:get(Saidi.."2:done") then -- الساعه 2 بعد منتصف الليل
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."2:done", true)
-end
-if local_time == "3:0" and not Redis:get(Saidi.."3:done") then -- الساعه 3 بعد منتصف الليل
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."3:done", true)
-end
-if local_time == "4:0" and not Redis:get(Saidi.."4:done") then -- الساعه 4 بعد منتصف الليل
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."4:done", true)
-end
-if local_time == "5:0" and not Redis:get(Saidi.."5:done") then -- الساعه 5 صباحا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."5:done", true)
-end
-if local_time == "6:0" and not Redis:get(Saidi.."6:done") then -- الساعه 6 صباحا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."6:done", true)
-end
-if local_time == "7:0" and not Redis:get(Saidi.."7:done") then -- الساعه 7 صباحا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."7:done", true)
-end
-if local_time == "8:0" and not Redis:get(Saidi.."8:done") then -- الساعه 8 صباحا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."8:done", true)
-end
-if local_time == "9:0" and not Redis:get(Saidi.."9:done") then -- الساعه 9 صباحا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."8:done", true)
-end
-if local_time == "10:0" and not Redis:get(Saidi.."10:done") then -- الساعه 10 صباحا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."10:done", true)
-end
-if local_time == "11:0" and not Redis:get(Saidi.."11:done") then -- الساعه 11 صباحا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."11:done", true)
-end
-if local_time == "12:0" and not Redis:get(Saidi.."12:done") then -- الساعه 12 ظهرا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","html",true)  
-end
-Redis:set(Saidi.."12:done", true)
-end
-if local_time == "13:0" and not Redis:get(Saidi.."13:done") then -- الساعه 1 مسائا
-for k,v in pairs(list_zkr) do
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."13:done", true)
-end
-if local_time == "14:0" and not Redis:get(Saidi.."14:done") and not Redis:get(Saidi.."14:done") then -- الساعه 2 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)
-end
-Redis:set(Saidi.."14:done", true)
-end
-if local_time == "15:0" and not Redis:get(Saidi.."15:done") then -- الساعه 3 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."15:done", true)
-end
-if local_time == "16:0" and not Redis:get(Saidi.."16:done") then -- الساعه 4 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."16:done", true)
-end
-if local_time == "17:0" and not Redis:get(Saidi.."17:done") then -- الساعه 5 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."17:done", true)
-end
-if local_time == "18:0" and not Redis:get(Saidi.."18:done") then -- الساعه 6 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."18:done", true)
-end
-if local_time == "19:0" and not Redis:get(Saidi.."19:done") then -- الساعه 7 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."19:done", true)
-end
-if local_time == "20:0" and not Redis:get(Saidi.."20:done") then -- الساعه 8 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."20:done", true)
-end
-if local_time == "21:0" and not Redis:get(Saidi.."21:done") then -- الساعه 9 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."21:done", true)
-end
-if local_time == "22:0" and not Redis:get(Saidi.."22:done") then -- الساعه 10 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."22:done", true)
-end
-if local_time == "23:0" and not Redis:get(Saidi.."23:done") then -- الساعه 11 مسائا
-for k,v in pairs(list_zkr) do 
-LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
-end
-Redis:set(Saidi.."23:done", true)
-end
-end
 if text == 'كشف القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -10365,6 +10208,21 @@ local m = "https://t.me/Qapplu/"..Rrr..""
 local t = "*اليك استوري عشوائي من البوت 🖇️🌚*"
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
+if text== "معلومات الجروب" then  
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(7)..' 〙* ',"md",true)  
+end
+if msg.can_be_deleted_for_all_users == false then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ عذرا البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+end
+local Get_Chat = LuaTele.getChat(msg_chat_id)
+local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
+local Chat = ' ✧ عدد الادمنيه » '..Info_Chats.administrator_count..
+'\n\n ✧ عدد المطرودين » '..Info_Chats.Jabwaned_count..
+'\n\n ✧ عدد الاعضاء » '..Info_Chats.member_count..
+'\n\n ✧  اسم الجروب » ['..Get_Chat.title..']'
+return LuaTele.sendText(msg_chat_id, msg_id, Chat, 'md', false, false, false, false, reply_markup)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local Mostafa = (Redis:get(Saidi.."Name:Bot") or "صعيدي")
