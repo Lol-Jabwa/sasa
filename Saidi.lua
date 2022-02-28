@@ -2702,7 +2702,7 @@ end
 if AddedBot == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ عذرا انته لست ادمن او مالك المجموعه *","md",true)  
 end
-if not Redis:get(Saidi.."Saidi:BotFree") then
+if not Redis:get(Saidi.."BotFree") then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ الوضع الخدمي تم تعطيله من قبل مطور البوت *","md",true)  
 end
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -4503,7 +4503,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Saidi.."Saidi:BotFree",true) 
+Redis:set(Saidi.."BotFree",true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ تم تفعيل البوت الخدمي *","md",true)
 end
 if TextMsg == 'التواصل' then
@@ -4967,7 +4967,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Saidi.."Saidi:BotFree") 
+Redis:del(Saidi.."BotFree") 
 return LuaTele.sendText(msg_chat_id,msg_id,"* ✧ تم تعطيل البوت الخدمي *","md",true)
 end
 if TextMsg == 'التواصل' then
@@ -10978,7 +10978,7 @@ msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == "غادر" or text == "بوت غادر" or text == "مغادره" then 
+if text == (Redis:get(Saidi.."Name:Bot") or 'صعيدي').." غادر" or text == 'غادر' or text == 'بوت غادر' then
 if not msg.Developers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص 〘 '..Controller_Num(3)..' 〙* ',"md",true)  
 end
@@ -12485,7 +12485,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:del(Saidi.."Saidi:BotFree") 
+Redis:del(Saidi.."BotFree") 
 return LuaTele.sendText(msg_chat_id,msg_id," ✧ تم تعطيل البوت الخدمي ","md",true)
 end
 if text == '〘 تعطيل التواصل 〙' then
@@ -12507,7 +12507,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Saidi.."Saidi:BotFree",true) 
+Redis:set(Saidi.."BotFree",true) 
 return LuaTele.sendText(msg_chat_id,msg_id," ✧ تم تفعيل البوت الخدمي ","md",true)
 end
 if text == '〘 تعيين قناه الاشتراك 〙' then
@@ -12847,13 +12847,13 @@ if NumMahibes == 1 then
 Mahibes1 = '🤚' else Mahibes1 = '👊'
 end
 if NumMahibes == 2 then
-Mahibes2 = '🤚' else Mahibes2 = '??'
+Mahibes2 = '🤚' else Mahibes2 = '👊'
 end
 if NumMahibes == 3 then
 Mahibes3 = '🤚' else Mahibes3 = '👊' 
 end
 if NumMahibes == 4 then
-Mahibes4 = '🤚' else Mahibes4 = '??'
+Mahibes4 = '🤚' else Mahibes4 = '👊'
 end
 if NumMahibes == 5 then
 Mahibes5 = '🤚' else Mahibes5 = '👊'
@@ -13004,7 +13004,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• اوامر المطور •𓄹', data = IdUser..'/helpo1'}, {text = '𓄼• اوامر المطور الثانوي •𓄹', data = IdUser..'/helpo2'}, 
+{text = '??• اوامر المطور •𓄹', data = IdUser..'/helpo1'}, {text = '𓄼• اوامر المطور الثانوي •𓄹', data = IdUser..'/helpo2'}, 
 },
 {
 {text = '𓄼• اوامر المطور الاساسي •𓄹', data = IdUser..'/helpo3'}, 
@@ -14090,6 +14090,9 @@ end
 end
 if Text and Text:match('/Zxchq(.*)') then
 local UserId = Text:match('/Zxchq(.*)')
+if tonumber(UserId) ~= tonumber(IdUser) then
+return LuaTele.answerCallbackQuery(data.id, " ✧ الامر لا يخصك", true)
+end
 LuaTele.answerCallbackQuery(data.id, " ✧ تم مغادره البوت من المجموعه", true)
 LuaTele.leaveChat(UserId)
 end
