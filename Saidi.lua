@@ -6668,7 +6668,7 @@ if Ban_Bots.luatele == "ok" then
 x = x + 1
 end
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*✧ عدد البوتات الموجوده : "..#List_Members.."\n✧ تم طرد ( "..x.." ) بوت من المجموعه *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*✧ عدد البوتات الموجوده -› "..#List_Members.."\n✧ تم طرد ( "..x.." ) بوت من المجموعه *","md",true)  
 end
 if text == 'المقيدين' then
 if not msg.Managers then
@@ -10988,6 +10988,12 @@ return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'*عند بيت ام فارووق 💃😹*',"md",false, false, false, false, reply_markup)
 end
+if text == 'فل' or text == 'فول' then
+if not Redis:get(Saidi.."Jabwa:Jeka"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
+end
+return LuaTele.sendText(msg_chat_id,msg_id,'*فلافل 🌶️*',"md",false, false, false, false, reply_markup)
+end
 if text == 'السيرفر' or text == 'معلومات السيرفر' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
@@ -12158,7 +12164,7 @@ local photo = LuaTele.getUserProfilePhotos(Saidi)
 local Jabwa = LuaTele.getUser(Saidi)
 local bain = LuaTele.getUser(msg.sender.user_id)
 Redis:sadd(Saidi..'',msg.sender.user_id)  
-if not msg.ControllerBot then
+if not msg.DevelopersQ then
 if not Redis:get(Saidi.."Start:Bot") then
 if bain.username then
 Jabwausername = '[@'..bain.username..']'
@@ -12170,6 +12176,7 @@ Jabwaiusername = '*['..bain.first_name..'](tg://user?id='..bain.id..' 〙*'
 else
 Jabwaiusername = 'لا يوجد'
 end
+local Groups = (Redis:scard(Saidi..'ChekBotAdd') or 0)
 local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(Saidi.."Name:Bot") or "صعيدي")..
 '\n ✧ اختصاص البوت حماية المجموعات'..
 '\n ✧ لتفعيل البوت عليك اتباع مايلي'..
@@ -12181,36 +12188,19 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓄼• جـابــوا •𓄹', url = 't.me/JABWA'},{text = '𓄼• جـيكا •𓄹', url = 't.me/Dev_Jeka'}, 
+{text = 'جابوا',type = 'text'},{text = 'جابوا', type = 'text'},
 },
-{
-{text = '𓄼• عوز بــوت •𓄹', url = 't.me/Dev_Jeka'},{text = '𓄼• تواصـل السـورس •𓄹', url = 't.me/TEAM_SAIDl'}, 
-},
-{
-{text = '𓄼• قـنـاة السـورس •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-{
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'}, 
-},
+}
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(CmdStart).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-LuaTele.sendText(Sudo_Id,0,'*\n ✧ دخل شخص إلى البوت \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..Jabwaiusername..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› @'..Jabwausername..' \n*',"md")
+LuaTele.sendText(Sudo_Id,0,'*\n ✧ دخل شخص إلى البوت \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..Jabwaiusername..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› '..Jabwausername..' \n عدد احصائيات المشتركين '..Groups..' \n*',"md")
 else
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• جـابــوا •𓄹', url = 't.me/JABWA'},{text = '𓄼• جـيكا •𓄹', url = 't.me/Dev_Jeka'}, 
-},
-{
-{text = '𓄼• عوز بــوت •𓄹', url = 't.me/Dev_Jeka'},{text = '𓄼• تواصـل السـورس •𓄹', url = 't.me/TEAM_SAIDl'}, 
-},
-{
-{text = '𓄼• قـنـاة السـورس •𓄹', url = 't.me/S_a_i_d_i'}, 
-},
-{
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'جابوا',type = 'text'},{text = 'جابوا', type = 'text'},
 },
 }
 }
@@ -14248,9 +14238,6 @@ end
 end
 if Text and Text:match('/Zxchq(.*)') then
 local UserId = Text:match('/Zxchq(.*)')
-if tonumber(UserId) ~= tonumber(IdUser) then
-return LuaTele.answerCallbackQuery(data.id, "✧ عذرا عزيزي الامر لا يخصك", true)
-end
 LuaTele.answerCallbackQuery(data.id, " ✧ تم مغادره البوت من المجموعه", true)
 LuaTele.leaveChat(UserId)
 end
