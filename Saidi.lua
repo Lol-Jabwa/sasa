@@ -10477,6 +10477,24 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,' ✧ اليك قسم الالعاب من سورس صعيدي ',"md",false, false, false, false, reply_markup)
 end
+if Redis:get(Saidi.."tast"..msg.sender.user_id) == "botttt" then
+local numj = {"حمره","تيست",}
+local sendnuj = nspp[math.random(#numj)]
+xl = ' ⟨  '..text..'  ⟩ \n '..sendnuj..'.'
+LuaTele.sendText(msg_chat_id,msg_id,xl,"md",true) 
+Redis:del(Saidi.."tast"..msg.sender.user_id) 
+end
+if text == "صراحه" or text == "صرحه" then
+Redis:set(Saidi.."tast"..msg.sender.user_id,"botttt") 
+if Redis:get(Saidi.."Status:Games"..msg.chat_id) then
+local texting = {"صراحه  |  صوتك حلوة؟",
+"صراحه  |  التقيت الناس مع وجوهين؟",
+"صراحه  |  شيء وكنت تحقق اللسان؟",
+"صراحه  | هل قبلت فتاه؟"
+}
+return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
+end
+end
 if Redis:get(Saidi.."zhrfa"..msg.sender.user_id) == "sendzh" then
 zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)..'')
 zx = JSON.decode(zh)
