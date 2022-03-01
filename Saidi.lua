@@ -10478,9 +10478,9 @@ data = {
 return LuaTele.sendText(msg_chat_id,msg_id,' ✧ اليك قسم الالعاب من سورس صعيدي ',"md",false, false, false, false, reply_markup)
 end
 if Redis:get(Saidi.."tast"..msg.sender.user_id) == "botttt" then
-local numj = {"حمره","تيست",}
-local sendnuj = nspp[math.random(#numj)]
-xl = ' ⟨  '..text..'  ⟩ \n '..sendnuj..'.'
+local nspp = {"10","20","30","35","75","34","66","82","23","19","55","80","63","32","27","89","99","98","79","100","8","3","6","0",}
+local rdbhoto = nspp[math.random(#nspp)]
+xl = ' ⟨  '..text..'  ⟩ \n '..rdbhoto..'.'
 LuaTele.sendText(msg_chat_id,msg_id,xl,"md",true) 
 Redis:del(Saidi.."tast"..msg.sender.user_id) 
 end
