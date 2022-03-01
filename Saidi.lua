@@ -12160,52 +12160,33 @@ LuaTele.sendText(msg_chat_id,msg_id, "* ✧ تم تحديث الملفات *","m
 dofile('Saidi.lua')  
 end
 if text == '/start' then
-local photo = LuaTele.getUserProfilePhotos(Saidi)
-local Jabwa = LuaTele.getUser(Saidi)
-local bain = LuaTele.getUser(msg.sender.user_id)
-Redis:sadd(Saidi..'',msg.sender.user_id)  
+Redis:sadd(Saidi..'Num:User:Pv',msg.sender.user_id)  
 if not msg.DevelopersQ then
 if not Redis:get(Saidi.."Start:Bot") then
-if bain.username then
-Jabwausername = '[@'..bain.username..']'
-else
-Jabwausername = 'لا يوجد'
-end
-if bain.first_name then
-Jabwaiusername = '*['..bain.first_name..'](tg://user?id='..bain.id..' 〙*'
-else
-Jabwaiusername = 'لا يوجد'
-end
-local Groups = (Redis:scard(Saidi..'ChekBotAdd') or 0)
-local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(Saidi.."Name:Bot") or "صعيدي")..
-'\n ✧ اختصاص البوت حماية المجموعات'..
-'\n ✧ لتفعيل البوت عليك اتباع مايلي'..
-'\n ✧ اضف البوت الى مجموعتك'..
-'\n ✧ ارفعه ادمن مشرف'..
-'\n ✧ ارسل كلمة تفعيل ليتم تفعيل المجموعه'..
-'\n ✧ مطور البوت -›〘 @'..UserSudo..' 〙*'
-if photo.total_count > 0 then
-keyboard = {} 
-keyboard.inline_keyboard = {
+local CmdStart = '*\n🧞‍♂ أهلآ بك في بوت '..(Redis:get(Saidi.."Name:Bot") or "فان")..
+'\n🧞‍♂ اختصاص البوت حماية المجموعات'..
+'\n🧞‍♂ لتفعيل البوت عليك اتباع مايلي ...'..
+'\n🧞‍♂ اضف البوت الى مجموعتك'..
+'\n🧞‍♂ ارفعه ادمن {مشرف}'..
+'\n🧞‍♂ ارسل كلمة { تفعيل } ليتم تفعيل المجموعه'..
+'\n🧞‍♂ مطور البوت ← {'..UserSudo..'}*'
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
 {
-{text = 'جابوا',type = 'text'},{text = 'جابوا', type = 'text'},
+{text = 'بويكا',type = 'text'},{text = 'بويكا', type = 'text'},
 },
 }
 }
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(CmdStart).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-LuaTele.sendText(Sudo_Id,0,'*\n ✧ دخل شخص إلى البوت \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..Jabwaiusername..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› '..Jabwausername..' \n عدد احصائيات المشتركين '..Groups..' \n*',"md")
+return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
 else
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = 'جابوا',type = 'text'},{text = 'جابوا', type = 'text'},
+{text = 'بويكا',type = 'text'},{text = 'بويكا', type = 'text'},
 },
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Saidi.."Start:Bot"),"md",false, false, false, false, reply_markup)
-end
 end
 else
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -13065,7 +13046,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• اوامر المطور •𓄹', data = IdUser..'/helpo1'}, {text = '𓄼• اوامر المطور الثانوي •𓄹', data = IdUser..'/helpo2'}, 
+{text = '𓄼• اوامر المطور •𓄹', data = IdUser..'/helpo1'}, {text = '𓄼• اوامر المطور الثانوي •??', data = IdUser..'/helpo2'}, 
 },
 {
 {text = '𓄼• اوامر المطور الاساسي •𓄹', data = IdUser..'/helpo3'},
