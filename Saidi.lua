@@ -6651,24 +6651,24 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ هاذا الامر يخص �
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Saidi..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ عذرا البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*✧ عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
-if GetInfoBot(msg).JabwaUser == false then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ✧ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+if GetInfoBot(msg).BanUser == false then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*✧ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Bots", "*", 0, 200)
 local List_Members = Info_Members.members
 x = 0
 for k, v in pairs(List_Members) do
-local Jabwa_Bots = LuaTele.setChatMemberStatus(msg.chat_id,v.member_id.user_id,'Jabwaned',0)
-if Jabwa_Bots.luatele == "ok" then
+local Ban_Bots = LuaTele.setChatMemberStatus(msg.chat_id,v.member_id.user_id,'banned',0)
+if Ban_Bots.luatele == "ok" then
 x = x + 1
 end
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ✧ عدد البوتات الموجوده : "..#List_Members.."\n* ✧ عدد البوتات الموجوده : "..#List_Members.."\n ✧ تم طرد 〘 "..x.." 〙بوت من المجموعه *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*✧ عدد البوتات الموجوده : "..#List_Members.."\n✧ تم طرد ( "..x.." ) بوت من المجموعه *","md",true)  
 end
 if text == 'المقيدين' then
 if not msg.Managers then
@@ -12010,7 +12010,7 @@ name = string.gsub(name,"🙍‍♂️","🙎‍♂️🙎‍♂️🙎‍♂️
 name = string.gsub(name,"🧖‍♂️","🧖‍♀️🧖‍♀️♀️🧖‍♀️🧖‍♀️🧖‍♂️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️")
 name = string.gsub(name,"👬","👭👭👭👭👭👬👭👭👭")
 name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧👨‍👨‍👦??‍👨‍👦")
-name = string.gsub(name,"??","🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒")
+name = string.gsub(name,"??","??🕒🕒🕒🕒🕒🕓🕒🕒🕒")
 name = string.gsub(name,"🕤","🕥🕥🕥🕥🕥🕤🕥🕥🕥")
 name = string.gsub(name,"⌛️","⏳⏳⏳⏳⏳⏳⌛️⏳⏳")
 name = string.gsub(name,"??","📆📆📆📆📆📆📅📆📆")
@@ -13389,7 +13389,7 @@ local TextHelp = [[*
 ⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺
 𓄼• بوت حذف •𓄹
 𓄼• روابط حذف •𓄹
-𓄼• رسائلي •𓄹
+??• رسائلي •𓄹
 𓄼• مسح رسائلي •𓄹
 𓄼• زخرفه •𓄹
 𓄼• قول + الكلمه •𓄹
