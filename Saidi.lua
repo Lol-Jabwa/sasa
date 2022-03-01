@@ -6363,7 +6363,7 @@ else
 Creat = " Developers Bot \n"
 end
 if photo.total_count > 0 then
-local TestText = "*𓄼• ِٰ𝗢ِٰ𝗪ِٰ𝗡ِٰ𝗘ِٰ𝗥ِٰ  ِٰ𝗚ِٰ𝗥ِٰ𝗢ِٰ𝗨ِٰ𝗣ِٰ𝗦ِٰ  -› *  [".. Jabwa.first_name.."](tg://user?id=".. Jabwa.id..")\n*𓄼• ʙɪᴏ -› * [〘 "..Bio.." 〙]"
+local TestText = "*𓄼• ِٰ𝗢ِٰ𝗪ِٰ𝗡ِٰ𝗘ِٰ𝗥ِٰ  ِٰ𝗚ِٰ𝗥ِٰ𝗢ِٰ𝗨ِٰ𝗣ِٰ𝗦ِٰ  -› *  ["..Jabwa.first_name.."](tg://user?id="..Jabwa.id..")\n*𓄼• ʙɪᴏ -› * [〘 "..Bio.." 〙]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -6373,7 +6373,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "*𓄼• ِٰ𝗢ِٰ𝗪ِٰ𝗡ِٰ𝗘ِٰ𝗥ِٰ  ِٰ𝗚ِٰ𝗥ِٰ𝗢ِٰ𝗨ِٰ𝗣ِٰ𝗦ِٰ  -› *  [".. Jabwa.first_name.."](tg://user?id=".. Jabwa.id..")\n*𓄼• ʙɪᴏ -› * [〘 "..Bio.." 〙]"
+local TestText = "*𓄼• ِٰ𝗢ِٰ𝗪ِٰ𝗡ِٰ𝗘ِٰ𝗥ِٰ  ِٰ𝗚ِٰ𝗥ِٰ𝗢ِٰ𝗨ِٰ𝗣ِٰ𝗦ِٰ  -› *  ["..Jabwa.first_name.."](tg://user?id="..Jabwa.id..")\n*𓄼• ʙɪᴏ -› * [〘 "..Bio.." 〙]"
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
@@ -6414,7 +6414,7 @@ Creat = " Developers Bot \n"
 end
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
-local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -6424,7 +6424,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
@@ -6477,7 +6477,7 @@ Bio = 'لا يوجد'
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -6487,7 +6487,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -6511,7 +6511,7 @@ Bio = 'لا يوجد'
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -6521,7 +6521,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10523,7 +10523,7 @@ local texting = {"صراحه  |  صوتك حلوة؟",
 "صراحه  -›  ما اكثر شي ندمن عليه ✧ ",
 "صراحه  -›  اي الدول تتمنى ان تزورها ✧ ",
 "صراحه  -›  متى اخر مره بكيت ✧ ",
-"صراحه  -›  تقيم حظك  ✧  من عشره ✧ ",
+"صراحه  -›  تقيم حظك من عشره ✧ ",
 "صراحه  -›  هل تعتقد ان حظك سيئ ✧ ",
 "صراحه  -›  شـخــص تتمنــي الإنتقــام منـــه ✧ ",
 "صراحه  -›  كلمة تود سماعها كل يوم ✧ ",
@@ -12440,7 +12440,7 @@ keybanyt.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 end
-if text == 'المطور' or text == '〘 مطور البوت 〙'  or text == '〘 المطور 〙' then   
+if text == 'المطور' or text == 'مطور'  or text == '〘 المطور 〙' then   
 local  ban = LuaTele.getUser(Sudo_Id) 
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -12473,7 +12473,7 @@ Creat = " Developers Bot \n"
 end
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
-local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -12483,7 +12483,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
@@ -12577,7 +12577,7 @@ msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == '〘 المطور جابوا 〙' or text == '〘 جابوا 〙' or text == '〘 مبرمج السورس 〙' then  
+if text == '〘 المطور جابوا 〙' or text == 'المطور جابوا' then  
 local UserId_Info = LuaTele.searchPublicChat("JABWA")
 if UserId_Info.id then
 local  Jabwa = LuaTele.getUser(UserId_Info.id)
@@ -12589,17 +12589,7 @@ Bio = 'لا يوجد'
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
-keyboardd = {} 
-keyboardd.inline_keyboard = {
-{
-{text = '𓄼• 𝗝ٰٖ𝗔ٰٖ𝗕ٰٖ??ٰٖ𝗔ٰٖ ➪🇳🇱 •𓄹', url = "https://t.me/JABWA"}
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-else
-local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -12607,11 +12597,21 @@ keyboardd.inline_keyboard = {
 },
 }
 local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+else
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴀʙᴡᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = '', url = "https://t.me/JABWA"}
+},
+}
+local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 end
 end
 end
-if text == '〘 المبرمج جيكا 〙' or text == '〘 جيكا 〙' or text == '〘 عوز بوت 〙' then  
+if text == '〘 المطور جيكا 〙' or text == 'المطور جيكا' then  
 local UserId_Info = LuaTele.searchPublicChat("Dev_Jeka")
 if UserId_Info.id then
 local  Jabwa = LuaTele.getUser(UserId_Info.id)
@@ -12623,7 +12623,7 @@ Bio = 'لا يوجد'
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -12633,7 +12633,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  [".. Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
+local TestText = "*𓄼• ᴅᴀᴠ ᴊᴇᴋᴀ •𓄹*\n*𓄼• ɴᴀᴍᴇ -› *  ["..Jabwa.first_name.."](tg://user?id="..Sudo_Id..")\n*𓄼• ʙɪᴏ -› * ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -12769,12 +12769,32 @@ local m = "https://t.me/xxxcccvvbbnn/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(Sinyly).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
+if text == "غنيلي" then
+local Sinyly = "*اليك اغنيه عشوائيه من البوت*"
+Jabwa = math.random(8,83)
+Jeka = math.random(108,143)
+Sasa = math.random(166,179)
+Java = math.random(198,216)
+Saidi = math.random(257,626)
+local Texting = {Jabwa,Jeka,Sasa,Java,Saidi}
+local Rrr = Texting[math.random(#Texting)]
+local m = "https://t.me/xxxcccvvbbnn/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(Sinyly).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
 if text == "استوري" then
 Rrr = math.random(4,50)
 local m = "https://t.me/Qapplu/"..Rrr..""
 local t = "*اليك استوري عشوائي من البوت 🖇️🌚*"
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
+if text == 'رتبتي' then
+local Jabwa = LuaTele.getUser(msg.sender.user_id)
+local news = '🌝🖤 رتبتك في البوت -› '..msg.Name_Controller
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{{text =news,url = "https://t.me/"..Jabwa.username..""}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
 end
 if text == '〘 تنظيف المشتركين 〙' then
 if not msg.ControllerBot then 
