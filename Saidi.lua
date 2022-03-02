@@ -12420,22 +12420,9 @@ LuaTele.sendText(msg_chat_id,msg_id, "* ✧ تم تحديث الملفات *","m
 dofile('Saidi.lua')  
 end
 if text == '/start' then
-local photo = LuaTele.getUserProfilePhotos(Saidi)
-local Jabwa = LuaTele.getUser(Saidi)
-local bain = LuaTele.getUser(msg.sender.user_id)
 Redis:sadd(Saidi..'Num:User:Pv',msg.sender.user_id)  
 if not msg.DevelopersQ then
 if not Redis:get(Saidi.."Start:Bot") then
-if bain.username then
-Jabwausername = '[@'..bain.username..']'
-else
-Jabwausername = 'لا يوجد'
-end
-if bain.first_name then
-Jabwaiusername = '*['..bain.first_name..'](tg://user?id='..bain.id..' 〙*'
-else
-Jabwaiusername = 'لا يوجد'
-end
 local CmdStart = '*\n ✧ أهلا بك في بوت '..(Redis:get(Saidi.."Name:Bot") or "صعيدي")..
 '\n ✧ اختصاص البوت حماية المجموعات'..
 '\n ✧ لتفعيل البوت عليك اتباع مايلي'..
@@ -12483,12 +12470,9 @@ data = {
 },
 }
 }
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(CmdStart).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-LuaTele.sendText(Sudo_Id,0,'*\n ✧ دخل شخص إلى البوت \n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀𝐈𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n ✧ اسمه -› '..Jabwaiusername..' \n ✧ ايديه -› '..msg.sender.user_id..'\n ✧ معرفة -› @'..Jabwausername..' \n*',"md")
+return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
 else
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = 'المطور جابوا',type = 'text'},{text = 'المطور جيكا', type = 'text'},
@@ -12528,8 +12512,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Saidi.."Start:Bot"),"md",false, false, false, false, reply_markup)
-end
+return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(VAN.."VAN:Start:Bot"),"md",false, false, false, false, reply_markup)
 end
 else
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
