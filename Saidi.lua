@@ -11438,6 +11438,7 @@ return LuaTele.sendText(msg_chat_id,msg_id," ✧ اسرع واحد يدز هاذ
 end
 end
 if text == "تويت" or text == "كت تويت" then
+if Redis:get(Saidi.."Status:Games"..msg.chat_id) then
 local texting = {"اخر افلام شاهدتها", 
 "ما هيا عيوب سورس صعيدي؟ ", 
 " هل بتكراش ع حد في حياتك؟", 
