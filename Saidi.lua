@@ -12760,7 +12760,6 @@ data = {
 },
 },
 }
-}
 return LuaTele.sendText(msg_chat_id,msg_id,' ⌯ اهلا بك عزيزي المطور', 'md', false, false, false, false, reply_markup)
 end
 if text == 'السيرفر' then
