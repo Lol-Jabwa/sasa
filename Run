@@ -1,18 +1,18 @@
 #!/bin/bash
 cd $(cd $(dirname $0); pwd)
 echo -e '\e[1m\e[31m
-Welcome to the source daemon
+ELKAYEB
 \033[0m'
 echo -e '\033[0;33m
-If it is the first time to install the source, send the number » {1}
-or اذا كانت اول مره تنصيب السورس ارسل رقم » {1}
-If you have already installed the source, send the number » {2}
-or اذا سبق ونصبت السورس ارسل رقم » {2}
+If it is the first time to install the source, send the number ⟨1⟩
+or اذا كانت اول مره تنصيب علي ارسل رق م ⟨1⟩
+If you have already installed the source, send the number ⟨2⟩
+or اذا سبق ونصبت علي ارسل رقم ⟨2⟩
 \033[0m'
 read Install
 case $Install in
 1)
-echo -e '\033[0;33mOffice installation has begun'
+echo -e '\033[0;33m Offices are being installed'
 sleep 2
 sudo apt update
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
@@ -43,12 +43,12 @@ cd luarocks-3.3.0
  luarocks install luasocket
 cd ../..
 rm -rf tmp
-sudo lua5.3 Saidi.lua
+sudo lua5.3 ELKAYEB.lua
 ;;
 2)
-echo -e "\e[1m\e[32mThe bot is running now : جاري تشغيل البوت الان : \e[0m"
+echo -e "\e[1m\e[32mThe bot is running now ⟨ جاري تشغيل البوت علي سورس صعيدي الان ⟩ \e[0m"
 sleep 2
 unzip luatele.zip
-sudo lua5.3 Saidi.lua
+sudo lua5.3 ELKAYEB.lua
 ;;
 esac
